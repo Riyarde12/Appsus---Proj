@@ -1,4 +1,5 @@
 import mailPreview from '../cmps/mail-preview.cmp.js';
+import { mailService } from '../services/mail-service.js';
 
 export default {
     props: ["mails"],
@@ -6,8 +7,8 @@ export default {
         <section class="mail-list">
             <ul>
                 <li v-for="mail in mails" :key="mail.id">
-                    <mail-preview @stateChange="onIsRead" :mail="mail"/>
-                     <router-link :to="'/mail/'+mail.id">Open Mail</router-link>
+                    <mail-preview  :mail="mail"/>
+                     <router-link  :to="'/mail/'+mail.id">Open Mail</router-link>
                 </li>
             </ul>
         </section>
@@ -15,21 +16,23 @@ export default {
     components: {
         mailPreview,
     },
-    created() { },
+    created() {
+
+    },
     data() {
         return {
-            // mailsUpdated: this.mails,
+
         };
     },
     methods: {
-        onIsRead(updatedMail) {
-            this.$emit('isReadChanged', { ...updatedMail });
+        onRead(mailId) {
+            const mailRead = mails.find(mail => mail.id === mailId);
+            mailRead.isRead = true;
         }
     },
     computed: {
     },
     mounted() {
-        console.log('this.mails', this.mails);
     },
     unmounted() { },
 };

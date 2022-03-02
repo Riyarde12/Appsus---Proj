@@ -18,14 +18,14 @@ export default {
         return {
             filterBy: {
                 subject: '',
-                isRead: false,
+                // isRead: false,
             }
         };
     },
     methods: {
         setFilter() {
             console.log('this.filterBy', this.filterBy);
-            this.$emit('filtered', { ...this.filterBy });
+            this.$emit('filtered', this.filterBy);
         }
     },
     computed: {},

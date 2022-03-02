@@ -17,9 +17,16 @@
 @import './cmps/app-header.css';
 @import './cmps/app-footer.css';
 
-
+/* //////////////////////////////////////////////////////////////////////////// */
 /* MAIL */
+
+/* CMP */
+@import './apps/mail/cmps/mail-preview.css'
+
+/* MAIN */
 @import './apps/mail/mail-style.css';
+
+/* ///////////////////////////////////////////////////////////////////////////// */
 
 
 /* NOTES */
