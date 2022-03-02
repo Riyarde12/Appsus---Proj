@@ -15,16 +15,26 @@ export default {
     created() { },
     data() {
         return {
-            isRead: this.mail.isRead,
+            isRead: null,
+            updatedMail: this.mail,
         };
     },
-    methods: {},
+    methods: {
+        // onReadChange() {
+        //     this.updatedMail.isRead = isRead;
+        //     console.log('updatedMail', this.updatedMail);
+        // }
+    },
     computed: {},
     watch: {
         isRead: {
             handler() {
                 console.log('Watching you!');
-            }
+                this.updatedMail.isRead = this.isRead;
+                console.log('updatedMail', this.updatedMail);
+                this.$emit('stateChange', { ...this.updatedMail });
+            },
+            deep: true
         }
     },
     unmounted() { },
