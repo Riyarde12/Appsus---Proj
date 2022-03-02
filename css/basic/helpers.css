@@ -4,14 +4,17 @@
     display: flex;
 }
 
-.flex.space-between {
+.space-between {
     justify-content: space-between;
 }
 
-.flex.align-center {
+.align-center {
     align-items: center;
 }
 
+.flex-column{
+    flex-direction: column;
+}
 
 /* list */
 
