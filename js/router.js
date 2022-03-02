@@ -26,10 +26,10 @@ const routes = [
         path: '/mail',
         component: mailIndex,
     },
-    // {
-    //     path: '/mail/:mailId',
-    //     component: mailDetails,
-    // },
+    {
+        path: '/mail/:mailId',
+        component: mailDetails,
+    },
 
 ];
 
