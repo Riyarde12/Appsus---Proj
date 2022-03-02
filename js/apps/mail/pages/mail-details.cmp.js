@@ -8,7 +8,7 @@ export default {
                 <h2>{{mail.subject}}</h2>
                 <h3>{{mail.name}}</h3>
                 <p>{{mail.body}}</p>
-                <button @click="onDelete">Delete</button>
+                <button @click="onDelete(mail.id)">Delete</button>
                 <router-link to="/mail">Back to Mails</router-link>
             </div>
         </section>
@@ -30,8 +30,13 @@ export default {
         };
     },
     methods: {
-        onDelete() {
-
+        onDelete(mailId) {
+            console.log('id', mailId);
+            mailService.remove(mailId)
+                .then(() => {
+                    this.$router.push('/mail');
+                    console.log('example');
+                });
         }
     },
     computed: {},

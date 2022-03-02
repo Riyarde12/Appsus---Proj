@@ -17,9 +17,15 @@ export default {
     },
     created() { },
     data() {
-        return {};
+        return {
+            mailsToUpdate: this.mails,
+        };
     },
     methods: {},
-    computed: {},
+    computed: {
+    },
+    mounted() {
+        console.log('this.mails', this.mails);
+    },
     unmounted() { },
 };

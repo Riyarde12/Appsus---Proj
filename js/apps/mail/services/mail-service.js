@@ -33,7 +33,6 @@ const gMails = [
 
 ];
 
-
 const loggedinUser = {
     email: 'user@appsus.com',
     fullname: 'Mahatma Appsus',
