@@ -1,7 +1,7 @@
 import appAbout from './pages/app-about.cmp.js';
 import appHome from './pages/app-home.cmp.js';
-import notesIndex from './apps/notes/pages/notes-index.cmp.js';
-import mailIndex from './apps/mail/pages/mail-index.cmp.js';
+import notesApp from './apps/notes/pages/notes-app.cmp.js';
+import mailApp from './apps/mail/pages/mail-app.cmp.js';
 import noteDetails from './apps/notes/pages/note-details.cmp.js';
 import mailDetails from './apps/mail/pages/mail-details.cmp.js';
 
@@ -16,7 +16,7 @@ const routes = [
     },
     {
         path: '/notes',
-        component: notesIndex,
+        component: notesApp,
     },
     // {
     //     path: '/notes/:noteId',
@@ -24,7 +24,7 @@ const routes = [
     // },
     {
         path: '/mail',
-        component: mailIndex,
+        component: mailApp,
     },
     {
         path: '/mail/:mailId',
