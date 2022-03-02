@@ -1,0 +1,25 @@
+/* BASE */
+
+/* @import 'basic/typography.css'; */
+/* @import 'basic/vars.css'; */
+
+@import 'basic/base.css';
+@import 'basic/layout.css';
+@import 'basic/helpers.css';
+/* @import 'basic/mq.css'; */
+
+
+/* APP COMPONENTS */
+
+@import './cmps/app-home.css';
+@import './cmps/app-header.css';
+@import './cmps/app-footer.css';
+@import './cmps/user-msg.css';
+
+
+/* MAIL */
+@import './apps/mail/mail-style.css';
+
+
+/* NOTES */
+@import './apps/notes/notes-style.css';
