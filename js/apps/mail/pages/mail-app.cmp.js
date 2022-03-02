@@ -34,9 +34,7 @@ export default {
             console.log('this.filterBy', this.filterBy);
         },
         setIsRead(updatedMail) {
-            console.log('updatedMail', updatedMail);
             const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
-            console.log('currMail', idx);
             this.mails[0].isRead = updatedMail.isRead;
             console.log('this.mails[0]', this.mails[0]);
         }
