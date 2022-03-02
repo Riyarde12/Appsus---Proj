@@ -1,15 +1,20 @@
 export default {
-    // props: [""],
-    template: `
+  props: ["note"],
+  template: `
         <section class="note-preview">
+            <div>
+                <p>{{note.info.title}}</p>
+            </div>
         </section>
     `,
-    components: {},
-    created() { },
-    data() {
-        return {};
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
-}
+  components: {},
+  created() {
+    console.log("preview created", this.note.info.title);
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {},
+  unmounted() {},
+};
