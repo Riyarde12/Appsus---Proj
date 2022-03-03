@@ -8,7 +8,7 @@ export default {
         <section class="mail-index">
             <h1>Hello mail index!!</h1>
             <mail-filter @filtered="setFilterBy"/>
-            <mail-list @isReadChanged="setIsRead" :mails="mailsToShow"/>
+            <mail-list  :mails="mailsToShow"/>
         </section>
     `,
     components: {
@@ -26,6 +26,7 @@ export default {
         return {
             mails: null,
             filterBy: null,
+            mailsRead: [],
         };
     },
     methods: {
@@ -33,19 +34,21 @@ export default {
             this.filterBy = filterBy;
             console.log('this.filterBy', this.filterBy);
         },
-        setIsRead(updatedMail) {
-            console.log('updatedMail', updatedMail);
-            const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
-            console.log('currMail', idx);
-            this.mails[0].isRead = updatedMail.isRead;
-            console.log('this.mails[0]', this.mails[0]);
-        }
+        // setIsRead(updatedMail) {
+        //     const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
+        //     this.mails[idx].isRead = updatedMail.isRead;
+        //     console.log('this.mails', this.mails);
+        //     mailService.save(this.mails)
+        //         .then(() => this.mailsRead.push(updatedMail));
     },
+    // },
     computed: {
         mailsToShow() {
             if (!this.filterBy) return this.mails;
             const regex = new RegExp(this.filterBy.subject, 'i');
-            // const isRead = this.filterBy.isRead
+            // const isRead = this.filterBy.isRead;
+            console.log('this.mailsRead', this.mailsRead);
+            // if (isRead) return mailsRead;
             return this.mails.filter(mail => (regex.test(mail.subject)));
         }
     },

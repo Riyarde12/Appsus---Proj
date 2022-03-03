@@ -21,6 +21,8 @@ export default {
         mailService.get(id)
             .then(mail => {
                 this.mail = mail;
+                this.mail.isRead = true;
+                mailService.save(this.mail);
                 console.log('this.mail', this.mail);
             });
     },
@@ -37,7 +39,8 @@ export default {
                     this.$router.push('/mail');
                     console.log('example');
                 });
-        }
+        },
+
     },
     computed: {},
     unmounted() { },
