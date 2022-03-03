@@ -1,16 +1,24 @@
 import { notesService } from "../services/note-service.js";
 // import { eventBus } from "../services/eventBus-service.js";
-import notesList from "../cmps/note-list.cmp.js";
+// import notesList from "../cmps/note-list.cmp.js";
 import noteTxt from "../cmps/note-txt.cmp.js";
+import noteTodos from "../cmps/note-todos.cmp.js";
 
 export default {
   template: `
         <section class="notes-index">
-            <form @submit.prevent="save">
-                <div v-for="(note, idx) in notes" :key="note.id">
-                    <component :is="note.type"  :info="note.info"></component>
-                </div>
-                <button>Save</button>
+            <!-- <form @submit.prevent="save"> -->
+                <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
+                <!-- <note-preview :note="note"/> -->
+                    <component :is="note.type" :info="note.info"></component>
+                    <!-- TODO:change to icons -->
+                    <div actions-icon-container>
+                    <button>Save</button>
+                    <button>Edit</button>
+                    <button>Remove</button>
+                    </div>
+                  </div>
+                
             </form>
 
             <!-- <pre>{{answers}}</pre> -->
@@ -21,8 +29,9 @@ export default {
         </section>
     `,
   components: {
-    notesList,
+    // notesList,
     noteTxt,
+    noteTodos,
   },
 
   data() {

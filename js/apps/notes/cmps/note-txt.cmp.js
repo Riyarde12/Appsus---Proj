@@ -1,13 +1,19 @@
 export default {
   props: ["info"],
   template: `
-          <section >            
-             <label>
+          <section class="note-text-container">    
+              <div class="note-text">    
+                <h3>{{info.title}}</h3>    
+                <p>{{info.txt}}</p>    
+              </div>
+             <!-- <label>
                 {{info.label}}
                 <input type="text" v-model="val" @change="reportVal" />
-             </label>  
-          <!-- <label for="story">{{info.title}}</label>
-                <textarea v-model="val" @change="reportVal" rows="5" cols="33">Enter Text...</textarea> -->
+             </label>   -->
+             <!-- <div flex flex-column>
+                <label for="">{{info.title}}</label>
+                <textarea v-model="val" @change="reportVal" rows="5" cols="33">Enter Text...</textarea>
+                </div> -->
           </section>
           `,
 
@@ -29,6 +35,6 @@ export default {
   },
   created() {
     console.log(this.info);
-    console.log(this.info.lable);
+    console.log(this.info.label);
   },
 };

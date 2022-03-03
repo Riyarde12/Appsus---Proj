@@ -4,6 +4,7 @@ export default {
         <section class="note-preview">
             <div>
                 <p>{{note.info.title}}</p>
+                <!-- <component> -->
             </div>
         </section>
     `,
