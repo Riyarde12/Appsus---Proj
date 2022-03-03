@@ -8,6 +8,10 @@ export default {
                     Filter by
                     <input v-model="filterBy.subject" type="text" placeholder="Search an email...">
                     <button @click="setFilter">Search</button>
+                    <label for="">
+                        Filter only read
+                    </label>
+                    <input type="checkbox" v-model="filterBy.isRead" >
             </label>
 
         </section>
@@ -18,7 +22,7 @@ export default {
         return {
             filterBy: {
                 subject: '',
-                // isRead: false,
+                isRead: false,
             }
         };
     },
@@ -26,6 +30,14 @@ export default {
         setFilter() {
             console.log('this.filterBy', this.filterBy);
             this.$emit('filtered', this.filterBy);
+        }
+    },
+    watch: {
+        filterBy: {
+            handler() {
+                console.log('Hey Watcher');
+            },
+            deep: true
         }
     },
     computed: {},
