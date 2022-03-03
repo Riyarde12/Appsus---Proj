@@ -1,18 +1,23 @@
 import { mailService } from '../services/mail-service.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
+import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 
 export default {
     // props: [""],
     template: `
         <section class="mail-index">
             <mail-filter @filtered="setFilterBy"/>
-            <mail-list  :mails="mailsToShow"/>
+            <div class="flex">
+                <mail-folder-list />
+                <mail-list  :mails="mailsToShow"/>
+            </div>
         </section>
     `,
     components: {
         mailList,
         mailFilter,
+        mailFolderList,
     },
     created() {
         mailService.query()
