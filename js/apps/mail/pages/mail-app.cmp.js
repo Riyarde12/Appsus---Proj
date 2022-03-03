@@ -47,7 +47,6 @@ export default {
             if (!this.filterBy) return this.mails;
             const regex = new RegExp(this.filterBy.subject, 'i');
             const isRead = this.filterBy.isRead;
-            // console.log('this.mailsRead', isRead);
             if (isRead) {
                 const mailIsRead = this.mails.filter(mail => {
                     return mail.isRead === true;
@@ -57,10 +56,9 @@ export default {
                     debugger;
                     const mailsForShow = [];
                     mailsForShow.push(...mailIsRead);
-                    const filterBy = mailsForShow.filter(mail => (regex.test(mail.subject)));
+                    const setAllFilterBy = mailsForShow.filter(mail => (regex.test(mail.subject)));
                     console.log('all filter mails', mailsForShow);
-                    return filterBy;
-                    // return mailIsRead;
+                    return setAllFilterBy;
                 }
                 else {
                     return mailIsRead;
