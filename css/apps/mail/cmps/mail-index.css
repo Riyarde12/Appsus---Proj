@@ -1,8 +1,0 @@
-.mail-index {
-    display: flex;
-    flex-direction: column;
-    max-width: 800px;
-    border: 1px solid;
-    height: 100%;
-    margin: 0.9375em;
-}

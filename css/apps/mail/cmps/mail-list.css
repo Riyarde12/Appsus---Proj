@@ -1,21 +1,26 @@
 .mail-list {
-    margin: 1.25rem;
-    border: 2px solid lightgray;
-}
-
-.mail-list .list-container {
-    display: flex;
-    border: 2px solid lightgray;
+    margin-left: 1.25em;
+    width: 100%;
 }
 
 .mail-list .list-container ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 0;
+    padding: 0;
 }
 
 .mail-list .list-container li {
-    border: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+
     padding: 5px;
-    width: 43.75em;
+    width: 100%;
+}
+
+.mail-list .list-container li:last-child {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+    width: 100%;
 }

@@ -1,24 +1,28 @@
 import { mailService } from '../services/mail-service.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
+import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 
 export default {
     // props: [""],
     template: `
-        <section class="mail-index">
+        <section class="mail-index main-container">
             <mail-filter @filtered="setFilterBy"/>
-            <mail-list  :mails="mailsToShow"/>
+            <div  class="main-content flex">
+                <mail-folder-list />
+                <mail-list  :mails="mailsToShow"/>
+            </div>
         </section>
     `,
     components: {
         mailList,
         mailFilter,
+        mailFolderList,
     },
     created() {
         mailService.query()
             .then(mails => {
                 this.mails = mails;
-                // console.log('mails', this.mails);
             });
     },
     data() {
@@ -31,16 +35,10 @@ export default {
     methods: {
         setFilterBy(filterBy) {
             this.filterBy = filterBy;
-            // console.log('this.filterBy', this.filterBy);
         },
-        // setIsRead(updatedMail) {
-        //     const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
-        //     this.mails[idx].isRead = updatedMail.isRead;
-        //     console.log('this.mails', this.mails);
-        //     mailService.save(this.mails)
-        //         .then(() => this.mailsRead.push(updatedMail));
+
     },
-    // },
+
     computed: {
         mailsToShow() {
             if (!this.filterBy) return this.mails;

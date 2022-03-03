@@ -25,6 +25,19 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
+        // children: [
+        //     {
+        //         path: 'sent',
+        //         component: mailSent,
+        //     }, {
+        //         path: 'trash',
+        //         component: mailTrash,
+        //     }, {
+        //         path: 'draft',
+        //         component: mailDraft,
+        //     },
+        // ]
+
     },
     {
         path: '/mail/:mailId',

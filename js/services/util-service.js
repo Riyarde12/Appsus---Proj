@@ -3,6 +3,7 @@ export const utilService = {
     loadFromStorage,
     makeId,
     makeLorem,
+    getRandomIntInclusive,
 };
 
 function saveToStorage(key, value) {
@@ -31,4 +32,9 @@ function makeLorem(wordCount = 100) {
         txt += words[Math.floor(Math.random() * words.length)] + ' ';
     }
     return txt.trim();
+}
+
+// get an random number max inclusive
+function getRandomIntInclusive(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
