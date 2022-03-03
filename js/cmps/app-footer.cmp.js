@@ -1,17 +1,19 @@
 export default {
-    // props: [""],
-    template: `
+  // props: [""],
+  template: `
         <section class="app-footer">
-           <!-- <h1>Hello!!! footer</h1> -->
+          <div footer-container>
+           <h3>cofferights @ 2022</h3>
+           </div>
            
         </section>
     `,
-    components: {},
-    created() { },
-    data() {
-        return {};
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
-}
+  components: {},
+  created() {},
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {},
+  unmounted() {},
+};
