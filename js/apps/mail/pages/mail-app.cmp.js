@@ -6,7 +6,6 @@ export default {
     // props: [""],
     template: `
         <section class="mail-index">
-            <h1>Hello mail index!!</h1>
             <mail-filter @filtered="setFilterBy"/>
             <mail-list  :mails="mailsToShow"/>
         </section>
@@ -53,7 +52,6 @@ export default {
                 });
                 console.log('only mails isRead', mailIsRead);
                 if (isRead && this.filterBy.subject) {
-                    debugger;
                     const mailsForShow = [];
                     mailsForShow.push(...mailIsRead);
                     const setAllFilterBy = mailsForShow.filter(mail => (regex.test(mail.subject)));

@@ -1,0 +1,21 @@
+.mail-list {
+    margin: 1.25rem;
+    border: 2px solid lightgray;
+}
+
+.mail-list .list-container {
+    display: flex;
+    border: 2px solid lightgray;
+}
+
+.mail-list .list-container ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mail-list .list-container li {
+    border: 1px solid lightgray;
+    padding: 5px;
+    width: 43.75em;
+}

@@ -5,8 +5,8 @@ const MAIL_KEY = 'mails';
 const gMails = [
     {
         id: 'e101',
-        subject: 'Miss you!',
-        body: 'Would love to catch up sometimes',
+        subject: ' how you doing? miss a lot, wonder whats new and how the process is progressing with you, stay tuned',
+        body: utilService.makeLorem(60),
         isRead: false,
         sentAt: 155110594,
         from: 'momo@momo.com',
@@ -15,7 +15,7 @@ const gMails = [
     {
         id: 'e102',
         subject: 'Love you!',
-        body: 'How do you fill?',
+        body: utilService.makeLorem(60),
         isRead: false,
         sentAt: 1551133930594,
         from: 'yarden.rishoni03@gmail.com',
@@ -24,7 +24,7 @@ const gMails = [
     {
         id: 'e103',
         subject: 'Rock you!',
-        body: 'How you doing body?',
+        body: utilService.makeLorem(60),
         isRead: false,
         sentAt: 11393094,
         from: 'yarden_rishoni@hotmail.com',
