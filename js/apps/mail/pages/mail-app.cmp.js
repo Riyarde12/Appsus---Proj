@@ -23,7 +23,6 @@ export default {
         mailService.query()
             .then(mails => {
                 this.mails = mails;
-                // console.log('mails', this.mails);
             });
     },
     data() {
@@ -36,16 +35,10 @@ export default {
     methods: {
         setFilterBy(filterBy) {
             this.filterBy = filterBy;
-            // console.log('this.filterBy', this.filterBy);
         },
-        // setIsRead(updatedMail) {
-        //     const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
-        //     this.mails[idx].isRead = updatedMail.isRead;
-        //     console.log('this.mails', this.mails);
-        //     mailService.save(this.mails)
-        //         .then(() => this.mailsRead.push(updatedMail));
+
     },
-    // },
+
     computed: {
         mailsToShow() {
             if (!this.filterBy) return this.mails;
