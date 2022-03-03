@@ -11,11 +11,12 @@ export default {
                 <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
                 <!-- <note-preview :note="note"/> -->
                     <component :is="note.type" :info="note.info"></component>
-                    <!-- TODO:change to icons -->
-                    <div actions-icon-container>
-                    <button>Save</button>
-                    <button>Edit</button>
-                    <button>Remove</button>
+                    <div class="actions-icon-container flex">                  
+                      <i class="fa-solid fa-thumbtack"></i>
+                      <i class="fa-solid fa-palette"></i>
+                      <i class="fa-solid fa-envelope"></i>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                      <i class="fa-solid fa-trash-can"></i>
                     </div>
                   </div>
                 

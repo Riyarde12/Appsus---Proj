@@ -19,9 +19,61 @@ const gNotes = [
       title: "Bamia recipe",
       label: "Remider",
       txt: "Ask Yaron || Google it",
+      style: {
+        backgroundColor: "#B5EAEA",
+      },
     },
-    style: {
-      backgroundColor: "#00d",
+  },
+  {
+    id: "n106",
+    type: NOTE_TYPE.TEXT,
+    isPinned: true,
+    info: {
+      title: "Bamia recipe",
+      label: "Remider",
+      txt: "Ask Yaron || Google it",
+      style: {
+        backgroundColor: "#EDF6E5",
+      },
+    },
+  },
+  {
+    id: "n105",
+    type: NOTE_TYPE.TEXT,
+    isPinned: true,
+    info: {
+      title: "Bamia recipe",
+      label: "Remider",
+      txt: "Ask Yaron || Google it",
+      style: {
+        backgroundColor: "#FFBCBC",
+      },
+    },
+  },
+  {
+    id: "n108",
+    type: NOTE_TYPE.TEXT,
+    isPinned: true,
+    info: {
+      title: "Bamia recipe",
+      label: "Remider",
+      txt: "Ask Yaron || Google it, dsfnldknf, jfh jsndgd lskngf ldg gn lejngleg ngelng erg.",
+      style: {
+        backgroundColor: "#F38BA0",
+      },
+    },
+  },
+  {
+    id: "n109",
+    type: NOTE_TYPE.TEXT,
+    isPinned: true,
+    info: {
+      title: "Bamia recipe",
+      label: "Remider",
+      txt: "Ask Yaron || Google it",
+      style: {
+        backgroundColor: "#E6DDC6",
+      },
     },
   },
   // {
@@ -49,9 +101,9 @@ const gNotes = [
         { txt: "Final sprint", doneAt: 187111111 },
         { txt: "Get a life", doneAt: 187111111 },
       ],
-    },
-    style: {
-      backgroundColor: "#00d",
+      style: {
+        backgroundColor: "#00d",
+      },
     },
   },
   // {

@@ -2,7 +2,7 @@ export default {
   props: ["info"],
   template: `
           <section class="note-text-container">    
-              <div class="note-text">    
+              <div :class="backgroundColor" class="note-text">    
                 <h3>{{info.title}}</h3>    
                 <p>{{info.txt}}</p>    
               </div>
@@ -29,6 +29,9 @@ export default {
     },
   },
   computed: {
+    backgroundColor() {
+      return this.info.style.backgroundColor;
+    },
     // listId() {
     //   return "list" + this._uid;
     // },
