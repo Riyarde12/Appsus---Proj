@@ -40,17 +40,17 @@ export default {
         //     console.log('this.mails', this.mails);
         //     mailService.save(this.mails)
         //         .then(() => this.mailsRead.push(updatedMail));
-    }
-},
-computed: {
-    mailsToShow() {
-        if (!this.filterBy) return this.mails;
-        const regex = new RegExp(this.filterBy.subject, 'i');
-        // const isRead = this.filterBy.isRead;
-        console.log('this.mailsRead', this.mailsRead);
-        // if (isRead) return mailsRead;
-        return this.mails.filter(mail => (regex.test(mail.subject)));
-    }
-},
-unmounted() { },
+    },
+    // },
+    computed: {
+        mailsToShow() {
+            if (!this.filterBy) return this.mails;
+            const regex = new RegExp(this.filterBy.subject, 'i');
+            // const isRead = this.filterBy.isRead;
+            console.log('this.mailsRead', this.mailsRead);
+            // if (isRead) return mailsRead;
+            return this.mails.filter(mail => (regex.test(mail.subject)));
+        }
+    },
+    unmounted() { },
 };
