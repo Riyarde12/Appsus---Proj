@@ -21,7 +21,7 @@
 /* MAIL */
 
 /* CMP */
-@import './apps/mail/cmps/mail-preview.css'
+@import './apps/mail/cmps/mail-preview.css';
 
 /* MAIN */
 @import './apps/mail/mail-style.css';
