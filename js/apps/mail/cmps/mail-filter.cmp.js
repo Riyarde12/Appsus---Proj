@@ -28,14 +28,15 @@ export default {
     },
     methods: {
         setFilter() {
-            console.log('this.filterBy', this.filterBy);
+            // console.log('this.filterBy', this.filterBy);
             this.$emit('filtered', this.filterBy);
         }
     },
     watch: {
         filterBy: {
             handler() {
-                console.log('Hey Watcher');
+                // console.log('Hey Watcher');
+                this.setFilter();
             },
             deep: true
         }

@@ -4,22 +4,24 @@ export default {
   props: ["mails"],
   template: `
         <section class="mail-list">
+          <div class="list-container">
             <ul>
                 <li v-for="mail in mails" :key="mail.id">
                     <mail-preview :mail="mail"/>
                      <router-link :to="'/mail/'+mail.id">Open Mail</router-link>
                 </li>
             </ul>
+          </div>
         </section>
     `,
   components: {
     mailPreview,
   },
-  created() {},
+  created() { },
   data() {
     return {};
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 };

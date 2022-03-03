@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         isRead() {
-            if (this.mail.isRead) return 'background-color: rgba(173, 167, 167, 0.801)';
+            if (this.mail.isRead) return 'background-color: rgba(224, 221, 221, 0.938)';
         }
     },
 

@@ -6,7 +6,6 @@ export default {
     // props: [""],
     template: `
         <section class="mail-index">
-            <h1>Hello mail index!!</h1>
             <mail-filter @filtered="setFilterBy"/>
             <mail-list  :mails="mailsToShow"/>
         </section>
@@ -19,7 +18,7 @@ export default {
         mailService.query()
             .then(mails => {
                 this.mails = mails;
-                console.log('mails', this.mails);
+                // console.log('mails', this.mails);
             });
     },
     data() {
@@ -32,7 +31,7 @@ export default {
     methods: {
         setFilterBy(filterBy) {
             this.filterBy = filterBy;
-            console.log('this.filterBy', this.filterBy);
+            // console.log('this.filterBy', this.filterBy);
         },
         // setIsRead(updatedMail) {
         //     const idx = this.mails.findIndex(mail => mail.id === updatedMail.id);
@@ -46,11 +45,26 @@ export default {
         mailsToShow() {
             if (!this.filterBy) return this.mails;
             const regex = new RegExp(this.filterBy.subject, 'i');
-            // const isRead = this.filterBy.isRead;
-            console.log('this.mailsRead', this.mailsRead);
-            // if (isRead) return mailsRead;
-            return this.mails.filter(mail => (regex.test(mail.subject)));
-        }
+            const isRead = this.filterBy.isRead;
+            if (isRead) {
+                const mailIsRead = this.mails.filter(mail => {
+                    return mail.isRead === true;
+                });
+                console.log('only mails isRead', mailIsRead);
+                if (isRead && this.filterBy.subject) {
+                    const mailsForShow = [];
+                    mailsForShow.push(...mailIsRead);
+                    const setAllFilterBy = mailsForShow.filter(mail => (regex.test(mail.subject)));
+                    console.log('all filter mails', mailsForShow);
+                    return setAllFilterBy;
+                }
+                else {
+                    return mailIsRead;
+                }
+            } else {
+                return this.mails.filter(mail => (regex.test(mail.subject)));
+            }
+        },
     },
     unmounted() { },
 };
