@@ -6,7 +6,7 @@ import noteTodos from "../cmps/note-todos.cmp.js";
 
 export default {
   template: `
-        <section class="notes-index">
+        <section class="notes-index main-container">
             <!-- <form @submit.prevent="save"> -->
                 <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
                 <!-- <note-preview :note="note"/> -->
