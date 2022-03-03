@@ -1,16 +1,16 @@
 export default {
+  props: ["info"],
   template: `
-          <section >
-              <datalist :id="listId">
-                  <option v-for="opt in info.opts" :value="opt" />
-              </datalist>
-              <label>
-                  {{info.label}}
-                  <input type="text" v-model="val" @change="reportVal" :list="listId" />
-              </label>  
+          <section >            
+             <label>
+                {{info.label}}
+                <input type="text" v-model="val" @change="reportVal" />
+             </label>  
+          <!-- <label for="story">{{info.title}}</label>
+                <textarea v-model="val" @change="reportVal" rows="5" cols="33">Enter Text...</textarea> -->
           </section>
           `,
-  props: ["info"],
+
   data() {
     return {
       val: "",
@@ -19,14 +19,16 @@ export default {
   methods: {
     reportVal() {
       this.$emit("setVal", this.val);
+      console.log("setVal", this.val);
     },
   },
   computed: {
-    listId() {
-      return "list" + this._uid;
-    },
+    // listId() {
+    //   return "list" + this._uid;
+    // },
   },
   created() {
-    console.log(this._uid);
+    console.log(this.info);
+    console.log(this.info.lable);
   },
 };

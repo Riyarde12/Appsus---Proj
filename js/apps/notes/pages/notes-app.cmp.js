@@ -1,19 +1,37 @@
 import { notesService } from "../services/note-service.js";
 // import { eventBus } from "../services/eventBus-service.js";
 import notesList from "../cmps/note-list.cmp.js";
+import noteTxt from "../cmps/note-txt.cmp.js";
 
 export default {
   template: `
         <section class="notes-index">
-        <!-- <book-add @addBook="addGoogleBook"/>
-              <book-filter @filtered="setFilter" /> -->
-          <div class="note-list-container">
+            <form @submit.prevent="save">
+                <div v-for="(note, idx) in notes" :key="note.id">
+                    <component :is="note.type"  :info="note.info"></component>
+                </div>
+                <button>Save</button>
+            </form>
+
+            <!-- <pre>{{answers}}</pre> -->
+          <!-- <div class="note-list-container">
               <notes-list v-if="notes" :notes="notesForDisplay" @selected="selectNote" />
-          </div>
+          </div> -->
+          
         </section>
     `,
   components: {
     notesList,
+    noteTxt,
+  },
+
+  data() {
+    return {
+      notes: null,
+      // answers: []
+      // notes: null,
+      //   filterBy: null,
+    };
   },
   created() {
     notesService
@@ -24,13 +42,8 @@ export default {
       })
       .catch((error) => console.log("error", error));
     //   .catch('error, try again later')
-  },
-
-  data() {
-    return {
-      notes: null,
-      //   filterBy: null,
-    };
+    console.log("notes app");
+    console.log("created this.notes", this.notes);
   },
   methods: {},
   computed: {
@@ -48,5 +61,7 @@ export default {
       //   });
     },
   },
-  //   unmounted() {},
+  mounted() {
+    console.log("mounted this.notes", this.notes);
+  },
 };
