@@ -3,7 +3,7 @@
 export default {
   // props: [""],
   template: `
-        <section>
+        <section class="mail-folder-list">
           <ul>
             <li>Inbox</li>
             <li>Sent</li>

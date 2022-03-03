@@ -7,7 +7,7 @@ export default {
             <label>
                     Filter by
                     <input v-model="filterBy.subject" type="text" placeholder="Search an email...">
-                    <button @click="setFilter">Search</button>
+                    <!-- <button @click="setFilter">Search</button> -->
                     <label for="">
                         Filter only read
                     </label>

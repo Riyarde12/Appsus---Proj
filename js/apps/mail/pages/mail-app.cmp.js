@@ -6,9 +6,9 @@ import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 export default {
     // props: [""],
     template: `
-        <section class="mail-index">
+        <section class="mail-index main-container">
             <mail-filter @filtered="setFilterBy"/>
-            <div class="flex">
+            <div  class="main-content flex">
                 <mail-folder-list />
                 <mail-list  :mails="mailsToShow"/>
             </div>

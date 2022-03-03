@@ -1,0 +1,10 @@
+.mail-index {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.25em;
+    border-top: 1px solid lightgrey;
+}
+
+.mail-index .main-content {
+    margin-top: 1.25em;
+}

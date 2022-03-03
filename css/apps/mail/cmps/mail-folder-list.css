@@ -1,0 +1,14 @@
+.mail-folder-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.25em;
+}
+
+.mail-folder-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mail-folder-list li {
+    margin-bottom: 0.625em;
+}

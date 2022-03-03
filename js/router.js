@@ -25,6 +25,7 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
+
     },
     {
         path: '/mail/:mailId',
