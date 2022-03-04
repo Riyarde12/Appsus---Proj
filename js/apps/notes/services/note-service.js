@@ -1,6 +1,7 @@
 import { utilService } from "../../../services/util-service.js";
 import { storageService } from "../../../services/async-storage-service.js";
 
+
 const NOTES_KEY = "notesDB";
 
 const NOTE_TYPE = {
@@ -76,19 +77,19 @@ const gNotes = [
       },
     },
   },
-  // {
-  //   id: "n102",
-  //   type: NOTE_TYPE.IMG,
-  //   isPinned: false,
-  //   info: {
-  //     title: "Bobi and Me",
-  //     label: "Family",
-  //     url: "http://some-img/me",
-  //   },
-  //   style: {
-  //     backgroundColor: "#00d",
-  //   },
-  // },
+  {
+    id: "n102",
+    type: NOTE_TYPE.IMG,
+    isPinned: false,
+    info: {
+      title: "Bobi and Me",
+      label: "Family",
+      url: "../../../../img/kermit.jpeg",
+    },
+    style: {
+      backgroundColor: "#00d",
+    },
+  },
   {
     id: "n103",
     type: NOTE_TYPE.TODO,
@@ -106,19 +107,33 @@ const gNotes = [
       },
     },
   },
-  // {
-  //   id: "n104",
-  //   type:  NOTE_TYPE.VIDEO,
-  //   isPinned: false,
-  //   info: {
-  //   title: "Funny-Cat",
-  //     label: "Friends",
-  //     url: "http://some-img/me", //??????
-  //   },
-  //   style: {
-  //     backgroundColor: "#00d",
-  //   },
-  //   },
+  {
+    id: "n104",
+    type:  NOTE_TYPE.VIDEO,
+    isPinned: false,
+    info: {
+    title: "Guilty Dogs",
+      label: "Friends",
+      url: "https://www.youtube.com/watch?v=_kLdO3EsECs",
+      // url: "https://www.youtube.com/watch?v=N-q559-hhUA",
+    },
+    style: {
+      backgroundColor: "#00d",
+    },
+    },
+    {
+      id: "n102",
+      type: NOTE_TYPE.IMG,
+      isPinned: false,
+      info: {
+        title: "Bobi and Me",
+        label: "Family",
+        url: "../../../../img/Elmodal.jpg",
+      },
+      style: {
+        backgroundColor: "#00d",
+      },
+    },
 ];
 
 _createNotes();
@@ -145,13 +160,13 @@ function _createNotes() {
   return notes;
 }
 
-function get(bookId) {
-  return storageService.get(BOOKS_KEY, bookId);
+function get(notId) {
+  return storageService.get(NOTES_KEY, notId);
 }
 
-function save(book) {
-  if (book.id) return storageService.put(BOOKS_KEY, book);
-  else return storageService.post(BOOKS_KEY, book);
+function save(note) {
+  if (note.id) return storageService.put(NOTES_KEY, note);
+  else return storageService.post(NOTES_KEY, note);
 }
 
 // function getEmptyNote() {
@@ -163,11 +178,11 @@ function save(book) {
 //   };
 // }
 
-function _createNote() {
-  const car = getEmptyCar(vendor, maxSpeed);
-  car.id = utilService.makeId();
-  return car;
-}
+// function _createNote() {
+//   const car = getEmptyCar(vendor, maxSpeed);
+//   car.id = utilService.makeId();
+//   return car;
+// }
 
 function getEmptyTxtNote() {
   return {
@@ -179,7 +194,7 @@ function getEmptyTxtNote() {
       label: "",
       txt: "",
       style: {
-        backgroundColor: "#B5EAEA",
+        backgroundColor: "",
       },
     },
   };

@@ -1,28 +1,34 @@
 /* notes */
-.notes-index{
-
+.notes-index {
+    column-count: 4;
+    break-inside: avoid;
+    display: inline-block;
+    /* gap: 10px; */
 }
 
 
-.note-container{
+.note-container {
     border: 1px solid black;
     /* width: 400px; */
     height: fit-content;
     padding: 0.5em;
     text-align: center;
-    display:inline-block;
-    column-count: 4;
-    break-inside: avoid;
+    /* gap: 10px; */
+    width: 300px;
+    /* min-height: 200px; */
 }
 
 
 /* note */
 
-.note-box{
+.note-box {
     min-width: 6.25em;
+    gap: 10px;
+    margin: 5px;
+
 }
 
-.actions-icon-container{   
+.actions-icon-container {
     display: flex;
     /* width: fit-content; */
     align-items: flex-start;
@@ -30,4 +36,23 @@
     gap: 5px;
     margin-top: 10px;
 
+}
+
+
+
+
+/* add note */
+.new-note-container {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.new-note-container input {
+    height: 40px;
+    border-radius: 3px;
+}
+
+.new-note-nav-container {
+    min-width: 90px;
+    gap: 10px
 }

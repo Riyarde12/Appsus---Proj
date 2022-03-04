@@ -1,12 +1,14 @@
+import { notesService } from '../services/note-service.js'
+
 export default {
   template: `
-  <section class="new-note-container">
-          <div class="new-note flex space-between">
-                <label for="title"><input type="text" placeholder="Note Title"></label>
-                <label for="note-text"><input type="text" placeholder="Note Text"></label>
-                <button @click="addNote" >Save</button>
+  <section class="new-note-container flex" >
+          <div class="new-note">
+                <label for="title"><input type="text" v-model="noteToAdd.info.title" placeholder="Note Title"></label>
+                <label for="note-text"><input type="text" v-model="noteToAdd.info.txt" required placeholder="Add Text"></label>
+                <button @click="saveNewNote" >Save</button>
           </div>
-          <div class="not-nav-container">
+          <div class="new-note-nav-container space-between">
             <i class="fa-solid fa-image"></i>
             <i class="fa-solid fa-play"></i> 
             <i class="fa-solid fa-list-ul"></i>
@@ -14,13 +16,16 @@ export default {
   </section>
   `,
   data() {
-    return {};
+    return {
+      noteToAdd: notesService.getEmptyTxtNote(),
+    };
   },
   components: {},
   created() {},
   methods: {
-    AddNote(id) {
-      this.$emit("addNote", id);
+    saveNewNote() {
+      // console.log('addNote',this.noteToAdd);
+      this.$emit("newNote",this.noteToAdd);
     },
 
     computed: {},

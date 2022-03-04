@@ -4,13 +4,15 @@ import { showErrorMsg, showSuccessMsg } from "../../../services/eventBus-service
 // import notesList from "../cmps/note-list.cmp.js";
 import noteTxt from "../cmps/note-txt.cmp.js";
 import noteTodos from "../cmps/note-todos.cmp.js";
-import addNote from "../cmps/add-note.cmp.js";
+import noteImg from "../cmps/note-img.cmp.js";
+import noteVideo from "../cmps/note-video.cmp.js";
 import actionNav from "../cmps/action-nav.cmp.js";
+import addNote from "../cmps/add-note.cmp.js";
 
 export default {
   template: `
         <section class="notes-index main-container flex flex-column">
-              <add-note @addNote="addNote" />
+              <add-note @newNote="saveNote" />
               <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
                     <div class="note-box">    
                         <component :is="note.type" :info="note.info"></component>
@@ -32,6 +34,8 @@ export default {
     noteTodos,
     addNote,
     actionNav,
+    noteImg,
+    noteVideo,
   },
 
   data() {
@@ -46,13 +50,13 @@ export default {
     notesService
       .query()
       .then((notes) => {
-        console.log("notes-index notes", notes);
+        // console.log("notes-index notes", notes);
         this.notes = notes;
       })
       .catch((error) => console.log("error", error));
     //   .catch('error, try again later')
-    console.log("notes app");
-    console.log("created this.notes", this.notes);
+    // console.log("notes app");
+    // console.log("created this.notes", this.notes);
   },
   methods: {
     removeNote(id) {
@@ -68,9 +72,15 @@ export default {
           showErrorMsg("Error - please try again later");
         });
     },
-    addNote() {
-      const newNote = notesService.getEmptyTxtNote();
+    saveNote(noteToAdd){
+      notesService.save(noteToAdd)
+      .then((note) => {
+        this.notes.push(note);
+      })
     },
+    // addNote() {
+    //   const newNote = notesService.getEmptyTxtNote();
+    // },
   },
   computed: {
     notesForDisplay() {
@@ -88,6 +98,6 @@ export default {
     },
   },
   mounted() {
-    console.log("mounted this.notes", this.notes);
+    // console.log("mounted this.notes", this.notes);
   },
 };
