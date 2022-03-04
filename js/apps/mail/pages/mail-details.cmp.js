@@ -4,11 +4,9 @@ import mailFilter from "../cmps/mail-filter.cmp.js";
 import { eventBus } from '../../../services/eventBus-service.js';
 
 export default {
-    // props: [""],
     template: `
         <section class="mail-details main-container">
                 <div class="details-container">
-                    <mail-folder-list @onSelectedBox="onSelectBox"/>
                     <div class="content-container" v-if="mail">
                         <h2>{{mail.subject}}</h2>
                         <h3>{{mail.name}}</h3>
@@ -48,10 +46,6 @@ export default {
                 });
         },
         onSelectBox(value) {
-            // debugger;
-            this.$router.push('/mail');
-            eventBus.emit('selectedBox', value);
-            // console.log('is here!!!', value);
         }
     },
     computed: {},

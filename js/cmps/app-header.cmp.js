@@ -10,17 +10,17 @@ export default {
                   <router-link to="/">Home</router-link> |
                   <router-link to="/about">About</router-link> |
                   <router-link to="/notes">Notes</router-link> |
-                  <router-link to="/mail">Mail</router-link>
+                  <router-link to="/mail/inbox">Mail</router-link>
               </nav>  
             </div>
       </section>
     `,
   components: {},
-  created() {},
+  created() { },
   data() {
     return {};
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 };
