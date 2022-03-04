@@ -1,15 +1,14 @@
 import { mailService } from "../services/mail-service.js";
 import mailFolderList from "../cmps/mail-folder-list.cmp.js";
 import mailFilter from "../cmps/mail-filter.cmp.js";
+import { eventBus } from '../../../services/eventBus-service.js';
 
 export default {
     // props: [""],
     template: `
         <section class="mail-details main-container">
-            <!-- <div> -->
-                <!-- <mail-filter /> -->
                 <div class="details-container">
-                    <mail-folder-list />
+                    <mail-folder-list @onSelectedBox="onSelectBox"/>
                     <div class="content-container" v-if="mail">
                         <h2>{{mail.subject}}</h2>
                         <h3>{{mail.name}}</h3>
@@ -18,12 +17,12 @@ export default {
                         <router-link to="/mail">Back to Mails</router-link>
                     </div>
                 </div>
-            <!-- </div> -->
         </section>
     `,
     components: {
         mailFolderList,
         mailFilter,
+
     },
     created() {
         const id = this.$route.params.mailId;
@@ -44,14 +43,16 @@ export default {
     },
     methods: {
         onDelete(mailId) {
-            console.log('id', mailId);
             mailService.remove(mailId)
                 .then(() => {
                     this.$router.push('/mail');
-                    console.log('example');
                 });
         },
-
+        onSelectBox(value) {
+            eventBus.emit('selectedBox', value);
+            this.$router.push('/mail');
+            console.log('is here!!!', value);
+        }
     },
     computed: {},
     unmounted() { },

@@ -2,6 +2,7 @@ import { mailService } from '../services/mail-service.js';
 import mailList from '../cmps/mail-list.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
 import mailFolderList from '../cmps/mail-folder-list.cmp.js';
+import { eventBus } from '../../../services/eventBus-service.js';
 
 export default {
     // props: [""],
@@ -23,7 +24,10 @@ export default {
         mailService.query()
             .then(mails => {
                 this.mails = mails;
+
             });
+        this.unsubscribe = eventBus.on('selectedBox', this.settingCurrentBox);
+
     },
     data() {
         return {
@@ -37,6 +41,7 @@ export default {
             this.filterBy = filterBy;
         },
         settingCurrentBox(settingMailsBy) {
+            console.log('this.value', settingMailsBy);
             this.mailsForDisplay = [];
             console.log('settingMailsBy', settingMailsBy);
             this.mailsForDisplay = this.mails.filter(mail => {
@@ -47,6 +52,7 @@ export default {
     },
     computed: {
         mailsToShow() {
+            if (!this.mailsForDisplay.length) return this.mails;
             if (!this.filterBy) return this.mailsForDisplay;
             const regex = new RegExp(this.filterBy.subject, 'i');
             const isRead = this.filterBy.isRead;
@@ -68,5 +74,7 @@ export default {
             }
         },
     },
-    unmounted() { },
+    unmounted() {
+        this.unsubscribe();
+    },
 };
