@@ -1,4 +1,6 @@
 import mailPreview from "../cmps/mail-preview.cmp.js";
+import mailDetails from "../pages/mail-details.cmp.js";
+import mailFilter from "./mail-filter.cmp.js";
 
 export default {
   props: ["mails"],
@@ -16,12 +18,21 @@ export default {
     `,
   components: {
     mailPreview,
+    mailDetails,
+    mailFilter,
   },
-  created() { },
+  created() {
+
+  },
   data() {
-    return {};
+    return {
+      mailsForDisplay: null,
+      filterBy: null,
+    };
   },
-  methods: {},
-  computed: {},
+  methods: {
+  },
+  computed: {
+  },
   unmounted() { },
 };

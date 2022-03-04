@@ -4,31 +4,53 @@ export default {
   template: `
         <section class="mail-folder-list">
           <ul>
-            <li><button @click="onSelectBox('from')"><img src="../../icons/envelope.png" alt=""></button></li>
-            <li><button  @click="onSelectBox('to')"><img src="../../icons/sent.png" alt=""></button></li>
-            <li><button   @click="onSelectBox('isTrash')"><img src="../../icons/trash-can.png" alt=""></button></li>
-            <li><button  @click="onSelectBox('isDraft')"><img src="../../icons/draft.png" alt=""></button></li>
-            <li><button @click="onSelectBox('isStared')"><img src="../../icons/favourite.png" alt=""></button></li>
+            <li>
+              <button @click="onSelectBox('from')">
+                 <router-link to="/mail/inbox">
+                   <img src="../../icons/envelope.png" alt="">
+                  </router-link>
+                </button>
+            </li>
+            <li>
+              <button  @click="onSelectBox('to')">
+                <router-link to="/mail/sent">
+                  <img src="../../icons/sent.png" alt="">
+                </router-link>
+            </button>
+          </li>
+            <li>
+              <button   @click="onSelectBox('isTrash')">
+              <router-link to="/mail/trash">
+                <img src="../../icons/trash-can.png" alt="">
+              </router-link>
+            </button>
+          </li>
+            <li>
+              <button  @click="onSelectBox('isDraft')">
+                <router-link to="/mail/draft">
+                  <img src="../../icons/draft.png" alt="">
+                </router-link>
+              </button></li>
+            <li>
+              <button @click="onSelectBox('isStared')">
+                <img src="../../icons/favourite.png" alt="">
+              </button>
+            </li>
           </ul>
+            
+
         </section>
     `,
   components: {},
   created() { },
   data() {
     return {
-      // setFolderBy: {
-      //   sent: false,
-      //   trash: false,
-      //   draft: false,
-      //   isStared: false,
-      //   inbox: false,
-      // }
 
     };
   },
   methods: {
     onSelectBox(val) {
-
+      console.log('val', val);
       this.$emit('onSelectedBox', val);
     },
 

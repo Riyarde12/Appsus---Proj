@@ -5,7 +5,10 @@ import mailApp from './apps/mail/pages/mail-app.cmp.js';
 import noteDetails from './apps/notes/pages/note-details.cmp.js';
 import mailDetails from './apps/mail/pages/mail-details.cmp.js';
 import mailCompose from './apps/mail/cmps/mail-compose.cmp.js';
-
+import mailTrash from './apps/mail/cmps/mail-trash.cmp.js';
+import mailSent from './apps/mail/cmps/mail-sent.cmp.js';
+import mailDraft from './apps/mail/cmps/mail-draft.cmp.js';
+import mailInbox from './apps/mail/cmps/mail-inbox.cmp.js';
 
 const routes = [
     {
@@ -32,6 +35,23 @@ const routes = [
                 path: 'compose',
                 component: mailCompose,
             },
+            {
+                path: 'trash',
+                component: mailTrash,
+            },
+            {
+                path: 'sent',
+                component: mailSent,
+            },
+            {
+                path: 'draft',
+                component: mailDraft,
+            },
+            {
+                path: 'inbox',
+                component: mailInbox,
+            },
+
         ]
     },
     {
