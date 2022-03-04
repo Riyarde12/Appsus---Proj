@@ -4,6 +4,8 @@ import notesApp from './apps/notes/pages/notes-app.cmp.js';
 import mailApp from './apps/mail/pages/mail-app.cmp.js';
 import noteDetails from './apps/notes/pages/note-details.cmp.js';
 import mailDetails from './apps/mail/pages/mail-details.cmp.js';
+import mailCompose from './apps/mail/cmps/mail-compose.cmp.js';
+
 
 const routes = [
     {
@@ -25,19 +27,12 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
-        // children: [
-        //     {
-        //         path: 'sent',
-        //         component: mailSent,
-        //     }, {
-        //         path: 'trash',
-        //         component: mailTrash,
-        //     }, {
-        //         path: 'draft',
-        //         component: mailDraft,
-        //     },
-        // ]
-
+        children: [
+            {
+                path: 'compose',
+                component: mailCompose,
+            },
+        ]
     },
     {
         path: '/mail/:mailId',

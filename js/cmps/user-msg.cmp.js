@@ -1,8 +1,8 @@
 import { eventBus } from "../services/eventBus-service.js";
 
 export default {
-  // props: [""],
-  template: `
+    // props: [""],
+    template: `
         <section v-if="msg" class="user-msg" :class="msg.type">
             <!-- <div> -->
                 <!-- <button @click="closeModal">X</button> -->
@@ -13,37 +13,29 @@ export default {
             </div>
         </section>
     `,
-  components: {},
-  created() {
-    this.unsubscribe = eventBus.on("show-msg", this.showMsg);
-  },
-  data() {
-    return {
-      msg: null,
-      timeoutId: null,
-    };
-  },
-  methods: {
-    showMsg(msg) {
-      this.msg = msg;
-      this.timeoutId = setTimeout(() => {
-        this.msg = null;
-      }, 3000);
+    components: {},
+    created() {
+        this.unsubscribe = eventBus.on("show-msg", this.showMsg);
     },
-    closeModal() {
-      (this.msg = null), clearTimeout(this.timeoutId);
+    data() {
+        return {
+            msg: null,
+            timeoutId: null,
+        };
     },
-  },
-  computed: {},
-  unmounted() {
-    this.unsubscribe();
-  },
+    methods: {
+        showMsg(msg) {
+            this.msg = msg;
+            this.timeoutId = setTimeout(() => {
+                this.msg = null;
+            }, 3000);
+        },
+        closeModal() {
+            (this.msg = null), clearTimeout(this.timeoutId);
+        },
+    },
+    computed: {},
+    unmounted() {
+        this.unsubscribe();
+    },
 };
-
-//             .then(() => {
-//                 eventBus.emit('show-msg', { txt: 'mail sent', type: 'success' });
-//             })
-//             .catch(err => {
-//                 console.error(err);
-//                 eventBus.emit('show-msg', { txt: 'Error - please try again later', type: 'error' });
-//             });

@@ -33,7 +33,6 @@ export default {
                 this.mail = mail;
                 this.mail.isRead = true;
                 mailService.save(this.mail);
-                console.log('this.mail', this.mail);
             });
     },
     data() {
@@ -49,9 +48,10 @@ export default {
                 });
         },
         onSelectBox(value) {
-            eventBus.emit('selectedBox', value);
+            // debugger;
             this.$router.push('/mail');
-            console.log('is here!!!', value);
+            eventBus.emit('selectedBox', value);
+            // console.log('is here!!!', value);
         }
     },
     computed: {},
