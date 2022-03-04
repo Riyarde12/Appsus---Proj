@@ -25,7 +25,7 @@ export default {
   methods: {
     reportVal() {
       this.$emit("setVal", this.val);
-      console.log("setVal", this.val);
+      // console.log("setVal", this.val);
     },
   },
   computed: {
@@ -37,7 +37,7 @@ export default {
     // },
   },
   created() {
-    console.log(this.info);
-    console.log(this.info.label);
+    // console.log(this.info);
+    // console.log(this.info.label);
   },
 };

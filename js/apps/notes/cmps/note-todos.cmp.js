@@ -15,21 +15,21 @@ export default {
 
   data() {
     return {
-      val: "",
-      selectedTasks: [],
+      // val: "",
+      // selectedTasks: [],
     };
   },
   methods: {
-    handleTasks(task) {
-      console.log(this.selectedTasks);
-    },
-    simulateAjax() {
-      this.selectedTasks = [{ txt: "Clean the house" }, { txt: "Learn Vue.js" }];
-    },
-    reportVal() {
-      this.$emit("setVal", this.val);
-      console.log("setVal", this.val);
-    },
+    // handleTasks(task) {
+    //   console.log(this.selectedTasks);
+    // },
+    // simulateAjax() {
+    //   this.selectedTasks = [{ txt: "Clean the house" }, { txt: "Learn Vue.js" }];
+    // },
+    // reportVal() {
+    //   this.$emit("setVal", this.val);
+    //   console.log("setVal", this.val);
+    // },
   },
   computed: {
     // listId() {
@@ -37,7 +37,7 @@ export default {
     // },
   },
   created() {
-    console.log(this.info);
-    console.log(this.info.label);
+    // console.log(this.info);
+    // console.log(this.info.label);
   },
 };

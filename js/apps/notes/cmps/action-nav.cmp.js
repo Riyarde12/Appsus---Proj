@@ -16,7 +16,7 @@ export default {
   },
   components: {},
   created() {
-    console.log("action nav", this.note);
+    // console.log("action nav", this.note);
   },
   methods: {
     remove(id) {
@@ -25,6 +25,6 @@ export default {
   },
   computed: {},
   mounted() {
-    console.log("note id", this.note.id);
+    // console.log("note id", this.note.id);
   },
 };

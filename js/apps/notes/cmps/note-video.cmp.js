@@ -5,7 +5,9 @@ export default {
               <div>  
               <h3>{{info.title}}</h3>
                   <div class="img-container">    
-                     <img :src="info.url" alt="Pictur"> 
+                    <video width="250" height="150" autoplay>
+                        <source :src="info.url" type="video/mp4">
+                    </video>
                   </div>
               </div>
             
@@ -36,7 +38,8 @@ export default {
       // },
     },
     created() {
-    //   console.log(this.info);
+      console.log(this.info);
+      console.log('video', this.info.url);
     //   console.log(this.info.label);
     },
   };
