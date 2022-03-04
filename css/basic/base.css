@@ -4,7 +4,7 @@
 
 html {
     /* line-height: 1.71; */
-    
+
 }
 
 body {
@@ -24,7 +24,8 @@ a {
 a:hover {
     text-decoration: none;
 }
-a:visited{
+
+a:visited {
     color: reset;
 }
 
@@ -41,4 +42,8 @@ h6 {
 
 li {
     list-style-type: none;
+}
+
+button {
+    cursor: pointer;
 }

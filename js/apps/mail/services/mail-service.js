@@ -2,18 +2,17 @@ import { utilService } from "../../../services/util-service.js";
 import { storageService } from "../../../services/async-storage-service.js";
 
 const MAIL_KEY = 'mails';
-// const MAIL_OUT_KEY = 'sent';
-// const MAIL_DRAFT_KEY = 'draft';
-// const MAIL_TRASH_KEY = 'trash';
-
 
 const gMails = [
     {
-        id: 'e101',
+        id: 'e105',
         subject: ' how you doing? miss a lot, wonder whats new and how the process is progressing with you, stay tuned',
         body: utilService.makeLorem(60),
         isRead: false,
-        sentAt: 155110594,
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 9, 4),
         from: 'momo@momo.com',
         name: 'Momo'
     },
@@ -22,16 +21,24 @@ const gMails = [
         subject: 'Love you!',
         body: utilService.makeLorem(70),
         isRead: false,
-        sentAt: 1551133930594,
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 4, 4),
         from: 'yarden.rishoni03@gmail.com',
         name: 'Yarden',
     },
     {
-        id: 'e103',
+        id: 'e106',
         subject: 'Regarding the continuation of our conversations about the meeting last night',
         body: utilService.makeLorem(100),
         isRead: false,
-        sentAt: 11393094,
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 6, 22),
         from: 'yarden_rishoni@hotmail.com',
         name: 'Jorden',
     },
@@ -40,7 +47,11 @@ const gMails = [
         subject: 'Rock you!',
         body: utilService.makeLorem(),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 8, 10),
         from: 'yarden_rishoni@hotmail.com',
         name: 'Jorden',
     },
@@ -49,7 +60,11 @@ const gMails = [
         subject: "Hi! how is it going? You've not updated me in a while",
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 9, 2),
         from: 'yarden_rishoni@hotmail.com',
         name: 'Jorden',
     },
@@ -58,7 +73,11 @@ const gMails = [
         subject: 'Regarding what we talked about earlier - moving house',
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 4, 3),
         from: 'yarden_rishoni@hotmail.com',
         name: 'Jorden',
     },
@@ -67,7 +86,11 @@ const gMails = [
         subject: 'I would be very happy if we could meet, I sent you some nice things',
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 6, 9),
         from: 'yarden_rishoni@hotmail.com',
         name: 'Jorden',
     },
@@ -76,16 +99,23 @@ const gMails = [
         subject: ' how you doing? miss a lot, wonder whats new and how the process is progressing with you, stay tuned',
         body: utilService.makeLorem(60),
         isRead: false,
-        sentAt: 155110594,
+
+        isStared: false,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 10, 4),
         to: 'momo@momo.com',
         name: 'Momo'
     },
     {
-        id: 'e102',
+        id: 'e108',
         subject: 'Love you!',
         body: utilService.makeLorem(70),
         isRead: false,
-        sentAt: 1551133930594,
+        isStared: true,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 8, 8),
         to: 'momo@momo.com',
         name: 'Momo'
     },
@@ -94,7 +124,10 @@ const gMails = [
         subject: 'Regarding the continuation of our conversations about the meeting last night',
         body: utilService.makeLorem(100),
         isRead: false,
-        sentAt: 11393094,
+        isStared: true,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 2, 20),
         to: 'momo@momo.com',
         name: 'Momo'
     },
@@ -103,7 +136,10 @@ const gMails = [
         subject: 'Rock you!',
         body: utilService.makeLorem(),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+        isStared: false,
+        isTrash: true,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 2, 4),
         to: 'momo@momo.com',
         name: 'Momo'
     },
@@ -112,7 +148,10 @@ const gMails = [
         subject: "Hi! how is it going? You've not updated me in a while",
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+        isStared: false,
+        isTrash: true,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 2, 4),
         to: 'momo@momo.com',
         name: 'Momo'
     },
@@ -121,7 +160,11 @@ const gMails = [
         subject: 'Regarding what we talked about earlier - moving house',
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+        sRead: false,
+        isStared: true,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 2, 4),
         to: 'momo@momo.com',
         name: 'Momo'
     },
@@ -130,10 +173,14 @@ const gMails = [
         subject: 'I would be very happy if we could meet, I sent you some nice things',
         body: utilService.makeLorem(utilService.getRandomIntInclusive(60, 150)),
         isRead: false,
-        sentAt: utilService.getRandomIntInclusive(1000000, 19000000),
+        isStared: true,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(utilService.getRandomIntInclusive(1990, 2022), 2, 4),
         to: 'momo@momo.com',
         name: 'Momo'
     }
+
 
 ];
 
@@ -186,8 +233,6 @@ function _setNextPrevMailId(mail) {
         });
 }
 
-
-
 function _createMails() {
     let mails = utilService.loadFromStorage(MAIL_KEY);
     if (!mails || !mails.length) {
@@ -197,11 +242,3 @@ function _createMails() {
     return mails;
 }
 
-function _createMailsOut() {
-    let mails = utilService.loadFromStorage(MAIL_OUT_KEY);
-    if (!mails || !mails.length) {
-        mails = gMailOut;
-        utilService.saveToStorage(MAIL_OUT_KEY, mails);
-    }
-    return mails;
-}

@@ -8,7 +8,6 @@ export default {
             <div :style="isRead">
                 <h3>{{mail.name}}</h3>
                 <h4>{{mail.subject}}</h4>
-               <!-- <input type="checkbox" value="Read" > -->
             </div>
         </section>
     `,
