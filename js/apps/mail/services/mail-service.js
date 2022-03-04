@@ -196,6 +196,7 @@ export const mailService = {
     remove,
     save,
     get,
+    setNewMailtoSent,
     // addReview
 };
 
@@ -209,11 +210,8 @@ function save(mail) {
 }
 
 function get(mailId) {
-    console.log('mailId', mailId);
+    // console.log('mailId', mailId);
     return storageService.get(MAIL_KEY, mailId);
-    // .then(mail => {
-    //     return _setNextPrevMailId(book);
-    // });
 }
 
 function remove(mailId) {
@@ -242,3 +240,18 @@ function _createMails() {
     return mails;
 }
 
+function setNewMailtoSent() {
+    return {
+        id: utilService.makeId(),
+        subject: '',
+        body: '',
+        isRead: false,
+        isStared: true,
+        isTrash: false,
+        labels: [],
+        sentAt: new Date(),
+        to: 'momo@momo.com',
+        name: 'Momo'
+    };
+
+}

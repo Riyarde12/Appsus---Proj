@@ -4,13 +4,19 @@ import mailFilter from '../cmps/mail-filter.cmp.js';
 import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 import { eventBus } from '../../../services/eventBus-service.js';
 
+
+
 export default {
     // props: [""],
     template: `
         <section class="mail-index main-container">
+            <nav>
+                <router-link to="/mail/compose">Compose</router-link>|
+            </nav>
+            <router-view></router-view>
             <mail-filter @filtered="setFilterBy"/>
             <div  class="main-content flex">
-                <mail-folder-list @onSelectedBox="settingCurrentBox"/>
+                <mail-folder-list if="" @onSelectedBox="settingCurrentBox"/>
                 <mail-list  :mails="mailsToShow"/>
             </div>
         </section>
@@ -26,7 +32,10 @@ export default {
                 this.mails = mails;
 
             });
-        this.unsubscribe = eventBus.on('selectedBox', this.settingCurrentBox);
+        this.unsubscribe = eventBus.on('selectedBox', (data) => {
+            console.log('data', data);
+            this.settingCurrentBox(data);
+        });
 
     },
     data() {
@@ -41,13 +50,10 @@ export default {
             this.filterBy = filterBy;
         },
         settingCurrentBox(settingMailsBy) {
-            console.log('this.value', settingMailsBy);
             this.mailsForDisplay = [];
-            console.log('settingMailsBy', settingMailsBy);
             this.mailsForDisplay = this.mails.filter(mail => {
                 if (mail[settingMailsBy]) return mail[settingMailsBy];
             });
-            console.log('mail', this.mailsForDisplay);
         }
     },
     computed: {
@@ -75,6 +81,7 @@ export default {
         },
     },
     unmounted() {
+        console.log('bye bye');
         this.unsubscribe();
     },
 };
