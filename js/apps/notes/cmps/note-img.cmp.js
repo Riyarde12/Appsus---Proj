@@ -3,7 +3,7 @@ export default {
     template: `
           <section class="todos-container">  
               <div>  
-              <h3>{{info.title}}</h3>
+              <h3 contenteditable="true">{{info.title}}</h3>
                   <div class="img-container">    
                      <img :src="info.url" alt="Pictur"> 
                   </div>

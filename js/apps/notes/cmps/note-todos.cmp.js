@@ -5,7 +5,8 @@ export default {
             <div>  
             <h3>{{info.title}}</h3>
                 <div v-for="task in info.todos" class="note-text-container">    
-                    <input type="checkbox":id="task.txt" :value="task" v-model="selectedTasks" @change="handleTasks(task)">
+                    <input type="checkbox":id="task.txt" :value="task">
+                    <!-- v-model="selectedTasks" @change="handleTasks(task)"> -->
                     <label :for="task.txt">{{task.txt}}</label>
                 </div>
             </div>

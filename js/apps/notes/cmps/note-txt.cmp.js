@@ -1,10 +1,10 @@
 export default {
-  props: ["info"],
+  props: ["info", "noteId"],
   template: `
           <section class="note-text-container">    
               <div :style="backgroundColor" class="note-text">    
-                <h3>{{info.title}}</h3>    
-                <p>{{info.txt}}</p>    
+                <h3 @keyup="updateTitle" contenteditable="true">{{info.title}}</h3>    
+                <p @keyup="updateTxt" contenteditable="true">{{info.txt}}</p>    
               </div>
              <!-- <label>
                 {{info.label}}
@@ -19,7 +19,10 @@ export default {
 
   data() {
     return {
-      val: "",
+      // val: "",
+      newTitle:'',
+      newTxt:'',
+
     };
   },
   methods: {
@@ -27,6 +30,21 @@ export default {
       this.$emit("setVal", this.val);
       // console.log("setVal", this.val);
     },
+    updateTitle(ev){
+      console.log('event', ev);
+      // console.log('h3.noteId',this.noteId);
+      // console.log('h3.value',this.info.title);
+      // console.log(ev.target.textContent);
+      this.newTitle = ev.currentTarget.textContent
+      this.$emit('noteTitleEdited', this.noteId, this.newTitle);
+      console.log('h3 updated', ev.currentTarget.textContent,this.newTitle);
+      // this.$emit('noteTitleEdited', this.info.title);
+    },
+    updateTxt(){
+      this.newTxt = ev.currentTarget.textContent
+      this.$emit('noteTxtEdited', this.newTxt);
+      console.log('p updated', ev.currentTarget.textContent, this.newTxt);
+    }
   },
   computed: {
     backgroundColor() {

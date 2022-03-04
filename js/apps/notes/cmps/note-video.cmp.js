@@ -2,7 +2,7 @@ export default {
     props: ["info"],
     template: `
           <section class="todos-container">  
-              <div>  
+              <div contenteditable="true">  
               <h3>{{info.title}}</h3>
                   <div class="img-container">    
                     <video width="250" height="150" autoplay>

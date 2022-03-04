@@ -4,6 +4,7 @@
     break-inside: avoid;
     display: inline-block;
     /* gap: 10px; */
+    background-color: #f4f0ec;
 }
 
 
@@ -52,7 +53,12 @@
     border-radius: 3px;
 }
 
-.new-note-nav-container {
-    min-width: 90px;
-    gap: 10px
+.new-note-nav-container img {
+    width: 20px;
+    /* gap: 10px, */
+    /* background-color: ; */
+}
+
+.new-note-nav-container img:hover {
+    cursor: pointer;
 }

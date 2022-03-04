@@ -15,7 +15,7 @@ export default {
               <add-note @newNote="saveNote" />
               <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
                     <div class="note-box">    
-                        <component :is="note.type" :info="note.info"></component>
+                        <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote"></component>
                     </div>
                     <action-nav v-if="note" :note="note" @remove="removeNote"/>
               </div>
@@ -76,6 +76,15 @@ export default {
       notesService.save(noteToAdd)
       .then((note) => {
         this.notes.push(note);
+      
+      })
+    },
+
+    editNote(id, editedTxt){
+      notesService.save(id, editedTxt)
+      .then((note) => {
+        this.notes.push(note);
+      
       })
     },
     // addNote() {
