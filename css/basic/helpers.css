@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.flex-column{
+.flex-column {
     flex-direction: column;
 }
 
@@ -24,7 +24,8 @@
     padding: 0;
 }
 
-.main-container{
-    height: 80vh;
-}
+.main-container {
+    min-height: 80vh;
+    height: auto;
 
+}

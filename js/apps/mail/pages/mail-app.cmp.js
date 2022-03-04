@@ -9,7 +9,7 @@ export default {
         <section class="mail-index main-container">
             <mail-filter @filtered="setFilterBy"/>
             <div  class="main-content flex">
-                <mail-folder-list />
+                <mail-folder-list @onSelectedBox="settingCurrentBox"/>
                 <mail-list  :mails="mailsToShow"/>
             </div>
         </section>
@@ -29,31 +29,35 @@ export default {
         return {
             mails: null,
             filterBy: null,
-            mailsRead: [],
+            mailsForDisplay: [],
         };
     },
     methods: {
         setFilterBy(filterBy) {
             this.filterBy = filterBy;
         },
-
+        settingCurrentBox(settingMailsBy) {
+            this.mailsForDisplay = [];
+            console.log('settingMailsBy', settingMailsBy);
+            this.mailsForDisplay = this.mails.filter(mail => {
+                if (mail[settingMailsBy]) return mail[settingMailsBy];
+            });
+            console.log('mail', this.mailsForDisplay);
+        }
     },
-
     computed: {
         mailsToShow() {
-            if (!this.filterBy) return this.mails;
+            if (!this.filterBy) return this.mailsForDisplay;
             const regex = new RegExp(this.filterBy.subject, 'i');
             const isRead = this.filterBy.isRead;
             if (isRead) {
                 const mailIsRead = this.mails.filter(mail => {
                     return mail.isRead === true;
                 });
-                console.log('only mails isRead', mailIsRead);
                 if (isRead && this.filterBy.subject) {
                     const mailsForShow = [];
                     mailsForShow.push(...mailIsRead);
                     const setAllFilterBy = mailsForShow.filter(mail => (regex.test(mail.subject)));
-                    console.log('all filter mails', mailsForShow);
                     return setAllFilterBy;
                 }
                 else {

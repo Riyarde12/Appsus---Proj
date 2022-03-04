@@ -12,3 +12,14 @@
 .mail-folder-list li {
     margin-bottom: 0.625em;
 }
+
+.mail-folder-list img {
+    width: 1.5625em;
+}
+
+.mail-folder-list button {
+    border: none;
+    padding: 0;
+    margin: 0px;
+    background-color: white;
+}
