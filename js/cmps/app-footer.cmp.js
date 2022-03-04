@@ -3,7 +3,7 @@ export default {
   template: `
         <section class="app-footer flex">
           <div footer-container>
-           <h3>cofferights @ 2022</h3>
+           <h3>coffeerights @ 2022</h3>
            </div>
         </section>
     `,

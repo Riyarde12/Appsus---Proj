@@ -1,31 +1,28 @@
 import { notesService } from "../services/note-service.js";
+import { showErrorMsg, showSuccessMsg } from "../../../services/eventBus-service.js";
 // import { eventBus } from "../services/eventBus-service.js";
 // import notesList from "../cmps/note-list.cmp.js";
 import noteTxt from "../cmps/note-txt.cmp.js";
 import noteTodos from "../cmps/note-todos.cmp.js";
+import addNote from "../cmps/add-note.cmp.js";
+import actionNav from "../cmps/action-nav.cmp.js";
 
 export default {
   template: `
-        <section class="notes-index main-container">
-            <!-- <form @submit.prevent="save"> -->
-                <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
-                <!-- <note-preview :note="note"/> -->
-                    <component :is="note.type" :info="note.info"></component>
-                    <div class="actions-icon-container flex">                  
-                      <i class="fa-solid fa-thumbtack"></i>
-                      <i class="fa-solid fa-palette"></i>
-                      <i class="fa-solid fa-envelope"></i>
-                      <i class="fa-solid fa-pen-to-square"></i>
-                      <i class="fa-solid fa-trash-can"></i>
+        <section class="notes-index main-container flex flex-column">
+              <add-note @addNote="addNote" />
+              <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
+                    <div class="note-box">    
+                        <component :is="note.type" :info="note.info"></component>
                     </div>
-                  </div>
-                
-            </form>
+                    <action-nav v-if="note" :note="note" @remove="removeNote"/>
+              </div>
+              
 
-            <!-- <pre>{{answers}}</pre> -->
-          <!-- <div class="note-list-container">
+           <!-- <pre>{{answers}}</pre>
+          <div class="note-list-container">
               <notes-list v-if="notes" :notes="notesForDisplay" @selected="selectNote" />
-          </div> -->
+          </div>  -->
           
         </section>
     `,
@@ -33,6 +30,8 @@ export default {
     // notesList,
     noteTxt,
     noteTodos,
+    addNote,
+    actionNav,
   },
 
   data() {
@@ -55,7 +54,24 @@ export default {
     console.log("notes app");
     console.log("created this.notes", this.notes);
   },
-  methods: {},
+  methods: {
+    removeNote(id) {
+      notesService
+        .remove(id)
+        .then(() => {
+          const idx = this.notes.findIndex((note) => note.id === id);
+          this.notes.splice(idx, 1);
+          showSuccessMsg("Deleted succesfully");
+        })
+        .catch((err) => {
+          console.error(err);
+          showErrorMsg("Error - please try again later");
+        });
+    },
+    addNote() {
+      const newNote = notesService.getEmptyTxtNote();
+    },
+  },
   computed: {
     notesForDisplay() {
       return this.notes;

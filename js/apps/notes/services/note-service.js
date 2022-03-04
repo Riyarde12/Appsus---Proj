@@ -127,6 +127,8 @@ export const notesService = {
   query,
   get,
   save,
+  remove,
+  getEmptyTxtNote,
 };
 
 function query() {
@@ -152,17 +154,37 @@ function save(book) {
   else return storageService.post(BOOKS_KEY, book);
 }
 
-// function getNewTextNote() {
-//   const newTextNote = {
-//     type: "note-txt",
-//     isPinned: true,
-//     info: {
-//       title: "Bamia recipe",
-//       txt: "Ask Yaron || Google it",
-//     },
-//     style: {
-//       backgroundColor: "#00d",
-//     },
+// function getEmptyNote() {
+//   return {
+//     id: "",
+//     vendor,
+//     maxSpeed,
+//     prevOwners: [],
 //   };
-//   return save(newTextNote);
 // }
+
+function _createNote() {
+  const car = getEmptyCar(vendor, maxSpeed);
+  car.id = utilService.makeId();
+  return car;
+}
+
+function getEmptyTxtNote() {
+  return {
+    id: "",
+    type: NOTE_TYPE.TEXT,
+    isPinned: false,
+    info: {
+      title: "",
+      label: "",
+      txt: "",
+      style: {
+        backgroundColor: "#B5EAEA",
+      },
+    },
+  };
+}
+
+function remove(noteId) {
+  return storageService.remove(NOTES_KEY, noteId);
+}
