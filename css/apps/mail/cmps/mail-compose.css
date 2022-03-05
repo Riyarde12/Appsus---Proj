@@ -3,7 +3,7 @@
     left: 765px;
     top: 140px;
     z-index: 1;
-    display: none;
+    /* display: none; */
 }
 
 .compose-container {

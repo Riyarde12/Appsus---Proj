@@ -11,8 +11,8 @@ export default {
     template: `
         <section class="mail-index main-container">
             <nav>
-                   <button v-on:click="isShown">Compose
-                       <mail-compose />
+                   <button v-on:click="isShown = !isShown">Compose
+                       <mail-compose  v-if="isShown" @closeModal="toggleModal"/>
                     </button>
             </nav>
             <div class="main-content flex">
@@ -38,7 +38,7 @@ export default {
         return {
             mails: null,
             filterBy: null,
-            openCompose: false,
+            isShown: false,
             mailsForDisplay: [],
         };
     },
@@ -50,11 +50,14 @@ export default {
             });
             eventBus.emit('selectedBox', this.mailsForDisplay);
         },
+        toggleModal() {
+            this.isShown = false;
+        }
     },
     computed: {
-        openCompose() {
-            return { display: block };
-        }
+        // openCompose() {
+        //     return { display: block };
+        // }
     },
     unmounted() {
         console.log('bye bye');
