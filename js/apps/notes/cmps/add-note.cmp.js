@@ -9,7 +9,7 @@ export default {
                 <label for="note-text"><input type="text" v-model="noteToAdd.info.txt" required :placeholder="placholder"></label>
                 <button @click="saveNewNote" >Save</button>
           </div>
-          <div class="new-note-nav-container space-between">
+          <div class="new-note-nav-container">
             <i @click="addNewNote" class="fa-regular fa-comment-lines"></i>
             <i @click="addNewNote" class="fa-solid fa-image"></i>
             <i @click="addNewNote" class="fa-solid fa-list-ul"></i>
@@ -20,7 +20,6 @@ export default {
             <!-- <img src="../../../../img/img.png" alt="">
             <img src="../../../../img/video.png" alt="">
             <img src="../../../../img/list.png" alt=""> -->
-            
           </div>
   </section>
   `,

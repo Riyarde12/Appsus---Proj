@@ -2,7 +2,7 @@ export default {
   name: "img note",
     props: ["info", "noteId"],
     template: `
-          <section class="todos-container">  
+          <section :style="backgroundColor" class="todos-container">  
               <div>  
               <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
                   <div class="img-container">    
@@ -52,9 +52,9 @@ export default {
       // },
     },
     computed: {
-      // listId() {
-      //   return "list" + this._uid;
-      // },
+      backgroundColor() {
+        return `background-color: ${this.info.style.backgroundColor}`;
+      },
     },
     created() {
       this.newNote.newUrl = this.info.url

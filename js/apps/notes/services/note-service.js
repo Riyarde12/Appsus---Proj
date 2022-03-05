@@ -27,14 +27,14 @@ const gNotes = [
   },
   {
     id: "n102",
-    type: NOTE_TYPE.TEXT,
-    isPinned: true,
+    type: NOTE_TYPE.IMG,
+    isPinned: false,
     info: {
-      title: "Bamia recipe",
-      label: "Remider",
-      txt: "Ask Yaron || Google it",
+      title: "British Kermit",
+      label: "Family",
+      url: "../../../../img/kermit.jpeg",
       style: {
-        backgroundColor: "#EDF6E5",
+        backgroundColor: "#FFBCBC",
     },
     },
   },
@@ -43,11 +43,11 @@ const gNotes = [
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
-      title: "Bamia recipe",
+      title: "Stuff to remember",
       label: "Remider",
-      txt: "Ask Yaron || Google it",
+      txt: "Sleeping, eating, water the plants",
       style: {
-        backgroundColor: "#FFBCBC",
+        backgroundColor: "#B5EAEA",
     },
     },
   },
@@ -56,16 +56,29 @@ const gNotes = [
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
-      title: "Bamia recipe",
+      title: "Open a locked folder on mac",
       label: "Remider",
-      txt: "Ask Yaron || Google it, dsfnldknf, jfh jsndgd lskngf ldg gn lejngleg ngelng erg.",
+      txt: "Open termminal => paste chflags -R nouchg . => Enter => get annoyed",
       style: {
-        backgroundColor: "#F38BA0",
+        backgroundColor: "#B5EAEA",
     },
     },
   },
   {
     id: "n105",
+    type: NOTE_TYPE.TEXT,
+    isPinned: true,
+    info: {
+      title: "Nothing comes to mind",
+      label: "Remider",
+      txt: "Lorem ipsum dolor sit amet consectetur adipisicing eli, Ab neque rem eum nobis. dolor sit amet consectetur",
+      style: {
+        backgroundColor: "#B5EAEA",
+    },
+    },
+  },
+  {
+    id: "n106",
     type:  NOTE_TYPE.VIDEO,
     isPinned: false,
     info: {
@@ -73,38 +86,38 @@ const gNotes = [
       label: "Friends",
       url: "https://www.youtube.com/embed/UCmUhYSr-e4?start=7",
       style: {
-        backgroundColor: "#00d",
+        backgroundColor: "#F38BA0",
     },
       },
     },
   {
-    id: "n106",
+    id: "n107",
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
-      title: "Bamia recipe",
+      title: "Isn't there an API",
       label: "Remider",
-      txt: "Ask Yaron || Google it",
+      txt: "to Axios from this demo data?",
       style: {
-        backgroundColor: "#E6DDC6",
-    },
-    },
-  },
-  {
-    id: "n107",
-    type: NOTE_TYPE.IMG,
-    isPinned: false,
-    info: {
-      title: "Kermit and Me",
-      label: "Family",
-      url: "../../../../img/kermit.jpeg",
-      style: {
-        backgroundColor: "#00d",
+        backgroundColor: "#B5EAEA",
     },
     },
   },
   {
     id: "n108",
+    type:  NOTE_TYPE.VIDEO,
+    isPinned: false,
+    info: {
+      title: "Guilty Dogs",
+      label: "Friends",
+      url: "https://www.youtube.com/embed/_kLdO3EsECs",
+      style: {
+        backgroundColor: "#F38BA0",
+      },
+    },
+  },
+  {
+    id: "n109",
     type: NOTE_TYPE.TODO,
     isPinned: true,
     info: {
@@ -112,37 +125,25 @@ const gNotes = [
       label: "Work",
       todos: [
         { txt: "Sprint 3", doneAt: null },
+        { txt: "Move up from chair", doneAt: null },
         { txt: "Final sprint", doneAt: 187111111 },
         { txt: "Get a life", doneAt: 187111111 },
       ],
       style: {
-        backgroundColor: "#00d",
+        backgroundColor: "#E6DDC6",
     },
     },
   },
-  {
-    id: "n109",
-    type:  NOTE_TYPE.VIDEO,
-    isPinned: false,
-    info: {
-    title: "Guilty Dogs",
-      label: "Friends",
-      url: "https://www.youtube.com/embed/_kLdO3EsECs",
-      style: {
-        backgroundColor: "#00d",
-    },
-      },
-    },
     {
       id: "n110",
       type: NOTE_TYPE.IMG,
       isPinned: false,
       info: {
-        title: "Elmodal!",
+        title: "Elmodal",
         label: "Family",
         url: "../../../../img/Elmodal.jpg",
         style: {
-          backgroundColor: "#00d",
+          backgroundColor: "#FFBCBC",
       },
       },
     },

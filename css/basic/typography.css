@@ -2,3 +2,8 @@
     font-family: conthrax;
     src: url(/fonts/conthrax/conthrax-sb.ttf);
 }
+
+@font-face {
+    font-family: bray;
+    src: url(../../fonts/Bray\ Notes.ttf);
+}

@@ -1,20 +1,33 @@
 /* notes */
 .notes-index {
-    column-count: 4;
-    display: inline-block;
-    gap: 10px;
     background-color: #f4f0ec;
+    /* font-family: bray; */
+
+}
+
+.notes-index h3 {
+    /* font-family: bray; */
+
 }
 
 
-.note-container {
-    border: 1px solid black;
-    /* width: 400px; */
-    min-height: 150px;
-    padding: 0.5em;
-    text-align: center;
+.notes-container {
+    /* display: flex;
+    flex-wrap: wrap; */
+    column-count: 4;
+    gap: 10px;
+    display: inline-block;
+    margin: 0 auto
+}
+
+.note-nav-container {
     break-inside: avoid;
     page-break-inside: avoid;
+    border: 1px solid black;
+    /* width: 400px; */
+    /* min-height: 150px; */
+    padding: 0.5em;
+    text-align: center;
     gap: 10px;
     margin: 10px;
     width: 300px;
@@ -32,18 +45,20 @@
 }
 
 .actions-icon-container {
-    display: flex;
+    visibility: hidden;
     /* width: fit-content; */
-    align-items: flex-start;
+    /* align-ite ms: flex-start; */
     /* align-self: flex-end; */
     gap: 5px;
     margin-top: 10px;
+    justify-content: end;
     /* display: none; */
 }
 
-/* .actions-icon-container img:hover {
+.note-nav-container:hover .actions-icon-container {
+    visibility: visible;
     display: flex;
-} */
+}
 
 /* note-img */
 .note-img {
@@ -95,4 +110,12 @@
     background-color: #f4f0ec;
     ;
     ;
+}
+
+
+/* Add new note bar */
+.new-note {
+    /* margin-top: 2em; */
+    /* justify-content: center;
+    align-items: center; */
 }

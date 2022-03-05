@@ -13,13 +13,15 @@ export default {
   name: "note-app",
   template: `
         <section class="notes-index main-container flex flex-column">
-              <add-note @newNote="saveNote" />
-              <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
-                    <div class="note-box" title="Click to Edit">    
+			<add-note @newNote="saveNote" />
+        	<div class="notes-container">
+				<div v-for="(note, idx) in notes" :key="note.id" class="note-nav-container">
+					<div class="note-box" title="Click to Edit" :style="backgroundColor">    
                         <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote" @updateNote="editNote" @updateNoteUrl="editNote"></component>
                     </div>
-                    <action-nav v-if="note" :note="note" @remove="removeNote"/>
-              </div>
+                  	<action-nav v-if="note" :note="note" @remove="removeNote"/>
+            	</div>
+            </div>
               
 
            <!-- <pre>{{answers}}</pre>
@@ -108,16 +110,19 @@ export default {
       return this.notes;
       //   if (!this.filterBy) return this.notes;
       //   console.log("this.notes", this.notes);
-      //   //short circut: if the first is undefiend put 0
-      //   const min = this.filterBy.fromPrice || 0;
-      //   const max = this.filterBy.toPrice || Infinity;
-      //   // return this.notes;
+  
+    
       //   const regex = new RegExp(this.filterBy.title, "i");
       //   return this.notes.filter((notes) => {
       //     return regex.test(notes.title) && min < notes.listPrice.amount && max > notes.listPrice.amount;
       //   });
     },
+    computed: {
+      backgroundColor() {
+        return `background-color: ${this.note.info.style.backgroundColor}`;
+      },
   },
+},
   mounted() {
     // console.log("mounted this.notes", this.notes);
   },

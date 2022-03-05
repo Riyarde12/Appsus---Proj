@@ -2,20 +2,16 @@ export default {
   name: "video note",
     props: ["info"],
     template: `
-          <section class="todos-container">  
+          <section :style="backgroundColor" class="todos-container">  
               <div contenteditable="true">  
               <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
                   <div class="video-container">   
-                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/rTVjnBo96Ug?start=11" title="Edit note" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>  -->
-                  <iframe width="250" height="150" :src="info.url" title="Edit note" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>
-                    <!-- <video @click="toggleEdit" :src="info.url" title="Edit Video" width="250" height="150" autoplay>
-                        <source :src="info.url" type="video/mp4"> -->
+                       <iframe width="270" height="150" :src="info.url" title="Edit note" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>
                         <i @click="toggleEdit" class="fa-solid fa-pen-to-square"></i>
                         <input v-show="isVideoClicked" @keyup="updateNote" v-model="newNote.newUrl" type="text" placeholder="Enter video URL..">
                     </video>
                   </div>
               </div>
-            
           </section>
             `,
   
@@ -51,6 +47,9 @@ export default {
     // },
   },
   computed: {
+    backgroundColor() {
+      return `background-color: ${this.info.style.backgroundColor}`;
+    },
   },
   created() {
     this.newNote.newUrl = this.info.url

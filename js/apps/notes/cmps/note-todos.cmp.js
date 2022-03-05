@@ -2,7 +2,7 @@ export default {
   name:"todos-note",
   props: ["info", "noteId"],
   template: `
-        <section class="todos-container">  
+        <section :style="backgroundColor" class="todos-container">  
           <h3 contenteditable="true" class="todo-header">{{info.title}}</h3>
           <!-- <h3 @keyup="updateNote" contenteditable="true" class="todo-header">{{info.title}}</h3> -->
             <div v-for="task in info.todos" class="note-todos-container flex">  
@@ -54,6 +54,9 @@ export default {
     }
   },
   computed: {
+    backgroundColor() {
+      return `background-color: ${this.info.style.backgroundColor}`;
+    },
     // crossedOut() {
     //   return this.isCrossedOut ? "crossed" : "todo";
     // },

@@ -2,8 +2,8 @@ export default {
   name:"text-note",
   props: ["info", "noteId"],
   template: `
-          <section class="note-text-container">    
-              <div :style="backgroundColor" class="note-text">    
+          <section :style="backgroundColor" class="note-text-container">    
+              <div class="note-text">    
                 <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>    
                 <p @keyup="updateNote" contenteditable="true">{{info.txt}}</p>    
               </div>
