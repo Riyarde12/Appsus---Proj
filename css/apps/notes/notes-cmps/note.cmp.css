@@ -36,9 +36,12 @@
     /* align-self: flex-end; */
     gap: 5px;
     margin-top: 10px;
-
+    /* display: none; */
 }
 
+.actions-icon-container:hover {
+    display: block;
+}
 
 
 
@@ -54,8 +57,8 @@
 }
 
 .new-note-nav-container img {
-    width: 20px;
-    /* gap: 10px, */
+    width: 18px;
+    /* gap: 10px,
     /* background-color: ; */
 }
 

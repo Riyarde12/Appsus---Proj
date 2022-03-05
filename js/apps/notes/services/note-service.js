@@ -95,7 +95,7 @@ const gNotes = [
     type: NOTE_TYPE.TODO,
     isPinned: true,
     info: {
-      title: "Get my stuff together",
+      title: "Get my shit together",
       label: "Work",
       todos: [
         { txt: "Sprint 3", doneAt: null },
@@ -127,7 +127,7 @@ const gNotes = [
       type: NOTE_TYPE.IMG,
       isPinned: false,
       info: {
-        title: "Bobi and Me",
+        title: "Elmodal!",
         label: "Family",
         url: "../../../../img/Elmodal.jpg",
       },
