@@ -1,15 +1,23 @@
 .mail-list {
     margin-left: 1.25em;
-    width: 100%;
+    /* width: 100%; */
+    width: 1113px;
+}
+
+.list-container {
+    /* max-width: 1000px; */
+    height: 485px;
+    overflow: scroll;
+    /* scroll-behavior: auto; */
 }
 
 .mail-list .list-container ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
     margin: 0;
     padding: 0;
-    width: 75em;
+    /* width: 75em; */
 }
 
 .mail-list .list-container li {
@@ -23,7 +31,7 @@
 }
 
 .mail-list .list-container li:hover {
-    background-color: rgba(211, 211, 211, 0.568);
+    background-color: rgba(233, 233, 233, 0.685);
     box-shadow: 10px 5px 10px #888888;
     transition: 0.4s;
 }

@@ -6,18 +6,38 @@ export default {
     // props: [""],
     template: `
     <section class="mail-compose">
-        <div>
-            <form @submit.prevent="addNewMail">
-                <input v-model="newMail.subject" type="text">
-                <textarea v-model="newMail.body" cols="30" rows="10"></textarea>
-                <button>sent</button>
-            </form>
+        <div class="compose-container flex">
+            <div class="tools-container">
+                <label>New message</label>
+                <button>X</button>
+            </div>
+            <div class="content-container flex">
+              <div>
+                  <form @submit.prevent="addNewMail">
+                      <div>
+                          <div>
+                              <input type="email" placeholder="To" v-model="newMail.to">
+                          </div>
+                          <div>
+                              <input v-model="newMail.subject" type="text" placeholder="Subject">
+                          </div>
+                          <div>
+                              <textarea v-model="newMail.body" cols="30" rows="10" placeholder="Write a text..."></textarea>
+                          </div>
+                      </div>
+                      <div>
+                          <button><img src="../../icons/sent.png" alt=""></button>
+                      </div>
+                </form>
+                  </div>
+            </div>
         </div>
     </section>
     `,
     data() {
         return {
             newMail: mailService.setNewMailtoSent(),
+            // logInUser: mailService.getUserLogIn()
         };
     },
     components: {},

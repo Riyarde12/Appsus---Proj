@@ -5,6 +5,10 @@
     border-top: 1px solid lightgrey;
 }
 
+.mail-index nav {
+    position: relative;
+}
+
 .mail-index .main-content {
     margin-top: 1.25em;
 }

@@ -31,15 +31,21 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
-        name: mailApp,
+        // name: mailApp,
         children: [
-            {
-                path: 'compose',
-                component: mailCompose,
-            },
+            // {
+            //     path: 'compose',
+            //     component: mailCompose,
+            // },
             {
                 path: 'trash',
                 component: mailTrash,
+                // children: [
+                //     {
+                //         path: 'compose',
+                //         component: mailCompose,
+                //     },
+                // ]
             },
             {
                 path: 'sent',

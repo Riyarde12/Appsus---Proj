@@ -16,8 +16,7 @@ export default {
     },
     created() {
         this.unsubscribe = eventBus.on('selectedBox', (currMails) => {
-            console.log('data', currMails);
-            this.getMails(currMails);
+            this.mails = currMails;
         });
     },
     data() {
@@ -27,10 +26,6 @@ export default {
         };
     },
     methods: {
-        getMails(currMails) {
-            this.mails = currMails;
-            console.log('this.currMails', this.mails);
-        },
         setFilterBy(filterBy) {
             this.filterBy = filterBy;
         },

@@ -203,7 +203,7 @@ export const mailService = {
     save,
     get,
     setNewMailtoSent,
-    // addReview
+    getUserLogIn,
 };
 
 function query() {
@@ -260,4 +260,8 @@ function setNewMailtoSent() {
         name: 'Momo'
     };
 
+}
+
+function getUserLogIn() {
+    return loggedinUser;
 }
