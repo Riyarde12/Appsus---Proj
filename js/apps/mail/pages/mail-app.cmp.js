@@ -1,21 +1,21 @@
 import { mailService } from '../services/mail-service.js';
-import mailList from '../cmps/mail-list.cmp.js';
+// import mailList from '../cmps/mail-list.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
 import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 import { eventBus } from '../../../services/eventBus-service.js';
-// import { router } from '../../../router.js';
+import mailCompose from '../cmps/mail-compose.cmp.js';
 
 
 export default {
-    name: 'mailApp',
+    // name: 'mailApp',
     template: `
         <section class="mail-index main-container">
             <nav>
-                <button>
-                    <router-link  to="/mail/compose">Compose</router-link>
-                </button>
+                   <button v-on:click="isShown">Compose
+                       <mail-compose />
+                    </button>
             </nav>
-            <div  class="main-content flex">
+            <div class="main-content flex">
                 <mail-folder-list @onSelectedBox="settingCurrentBox"/>
                 <router-view></router-view>
             </div>
@@ -24,6 +24,7 @@ export default {
     components: {
         mailFilter,
         mailFolderList,
+        mailCompose,
     },
     created() {
         mailService.query()
@@ -37,8 +38,8 @@ export default {
         return {
             mails: null,
             filterBy: null,
-            // mailsForDisplay: [],
-
+            openCompose: false,
+            mailsForDisplay: [],
         };
     },
     methods: {
@@ -48,9 +49,12 @@ export default {
                 if (mail[settingMailsBy]) return mail[settingMailsBy];
             });
             eventBus.emit('selectedBox', this.mailsForDisplay);
-        }
+        },
     },
     computed: {
+        openCompose() {
+            return { display: block };
+        }
     },
     unmounted() {
         console.log('bye bye');

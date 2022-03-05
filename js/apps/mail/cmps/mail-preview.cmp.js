@@ -4,8 +4,8 @@
 export default {
     props: ["mail"],
     template: `
-        <section class="mail-preview">
-            <div :style="isRead">
+        <section class="mail-preview" :style="isRead">
+            <div >
                 <!-- <div> -->
                     <button @click.stop.prevent="onStared"><img src="../../icons/favourite.png" alt=""></button>
                 <!-- </div> -->
@@ -34,7 +34,7 @@ export default {
     },
     computed: {
         isRead() {
-            if (this.mail.isRead) return 'background-color: rgba(224, 221, 221, 0.938)';
+            if (this.mail.isRead) return 'background-color: rgba(231, 231, 231, 0.37), font-weight: normal';
         }
     },
 

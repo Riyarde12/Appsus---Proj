@@ -21,12 +21,17 @@
 /* MAIL */
 
 /* CMP */
+@import './apps/mail/cmps/mail-compose.css';
 @import './apps/mail/cmps/mail-details.css';
 @import './apps/mail/cmps/mail-filter.css';
 @import './apps/mail/cmps/mail-list.css';
 @import './apps/mail/cmps/mail-preview.css';
 @import './apps/mail/cmps/mail-folder-list.css';
 @import './apps/mail/cmps/mail-app.css';
+
+/* BASE */
+
+@import './apps/mail/mail-basic/base.css';
 
 /* MAIN */
 @import './apps/mail/mail-style.css';
