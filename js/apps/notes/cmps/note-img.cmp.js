@@ -1,4 +1,5 @@
 export default {
+  name: "img note",
     props: ["info", "noteId"],
     template: `
           <section class="todos-container">  

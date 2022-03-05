@@ -1,4 +1,5 @@
 export default {
+  name: "video note",
     props: ["info"],
     template: `
           <section class="todos-container">  
