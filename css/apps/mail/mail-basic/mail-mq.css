@@ -1,0 +1,9 @@
+@media (min-width: 1020px) {
+    .list-container {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1120px) {
+    .mail-compose {}
+}

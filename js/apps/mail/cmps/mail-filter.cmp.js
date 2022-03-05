@@ -4,16 +4,20 @@ export default {
     // props: [""],
     template: `
         <section class="mail-filter">
-            <label>
-                    Filter by
-                    <input v-model="filterBy.subject" type="text" placeholder="Search an email...">
- 
-                    <label for="">
-                        Filter only read
+            <div class="filter-container ">
+                    <label>
+                            Filter by
+                            <div>
+                                <input v-model="filterBy.subject" type="text" placeholder="Search an email...">
+                            </div>
+                            <div>
+                                <label for="">
+                                    Filter only read
+                                </label>
+                                <input type="checkbox" v-model="filterBy.isRead" >
+                            </div>
                     </label>
-                    <input type="checkbox" v-model="filterBy.isRead" >
-            </label>
-
+            </div>
         </section>
     `,
     components: {},
@@ -28,7 +32,6 @@ export default {
     },
     methods: {
         setFilter() {
-
             this.$emit('filtered', this.filterBy);
         }
     },

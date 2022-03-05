@@ -2,9 +2,7 @@ import appAbout from './pages/app-about.cmp.js';
 import appHome from './pages/app-home.cmp.js';
 import notesApp from './apps/notes/pages/notes-app.cmp.js';
 import mailApp from './apps/mail/pages/mail-app.cmp.js';
-import noteDetails from './apps/notes/pages/note-details.cmp.js';
 import mailDetails from './apps/mail/pages/mail-details.cmp.js';
-import mailCompose from './apps/mail/cmps/mail-compose.cmp.js';
 import mailTrash from './apps/mail/cmps/mail-trash.cmp.js';
 import mailSent from './apps/mail/cmps/mail-sent.cmp.js';
 import mailDraft from './apps/mail/cmps/mail-draft.cmp.js';
@@ -31,21 +29,11 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
-        // name: mailApp,
         children: [
-            // {
-            //     path: 'compose',
-            //     component: mailCompose,
-            // },
             {
                 path: 'trash',
                 component: mailTrash,
-                // children: [
-                //     {
-                //         path: 'compose',
-                //         component: mailCompose,
-                //     },
-                // ]
+
             },
             {
                 path: 'sent',
@@ -70,6 +58,11 @@ const routes = [
         path: '/mail/:mailId',
         component: mailDetails,
     },
+    // {
+    //     path: '/mail/:mailId?',
+    //     component: mailDetails,
+    // },
+
 
 ];
 
