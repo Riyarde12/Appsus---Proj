@@ -1,4 +1,5 @@
 export default {
+  name: "actions-nav",
   props: ["note"],
   template: `
 <section class="add-note-container">

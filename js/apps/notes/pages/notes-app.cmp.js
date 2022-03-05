@@ -10,6 +10,7 @@ import actionNav from "../cmps/action-nav.cmp.js";
 import addNote from "../cmps/add-note.cmp.js";
 
 export default {
+  name: "note-app",
   template: `
         <section class="notes-index main-container flex flex-column">
               <add-note @newNote="saveNote" />

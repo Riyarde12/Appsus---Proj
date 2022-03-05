@@ -1,6 +1,7 @@
 import { notesService } from '../services/note-service.js'
 
 export default {
+  name: "add note",
   template: `
   <section class="new-note-container flex" >
           <div class="new-note">
