@@ -15,7 +15,7 @@ export default {
               <add-note @newNote="saveNote" />
               <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
                     <div class="note-box">    
-                        <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote" @updateNote="editNote"></component>
+                        <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote" @updateNote="editNote" @updateNoteUrl="editNote"></component>
                     </div>
                     <action-nav v-if="note" :note="note" @remove="removeNote"/>
               </div>
@@ -80,13 +80,16 @@ export default {
         
       })
     },
-    editNote({newTitle, newTxt, id}){
-      console.log('edit title', newTitle);
-      console.log('edit text', newTxt);
+    editNote({newTitle, newTxt, id, newUrl}){
+      // console.log('edit title', newTitle);
+      // console.log('edit text', newTxt);
+      console.log('edit url', newUrl);
       notesService.get(id).then(note => {
         note.info.title = newTitle;
         note.info.txt = newTxt
+        note.info.url = newUrl
        notesService.save(note)
+      //  console.log(this.);
       //  .then(note => {
       //    this.notes.find(note => {
       //      if (note.id === 

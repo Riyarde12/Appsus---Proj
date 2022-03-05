@@ -1,9 +1,8 @@
 /* notes */
 .notes-index {
     column-count: 4;
-    break-inside: avoid;
     display: inline-block;
-    /* gap: 10px; */
+    gap: 10px;
     background-color: #f4f0ec;
 }
 
@@ -11,10 +10,13 @@
 .note-container {
     border: 1px solid black;
     /* width: 400px; */
-    height: fit-content;
+    min-height: 150px;
     padding: 0.5em;
     text-align: center;
-    /* gap: 10px; */
+    break-inside: avoid;
+    page-break-inside: avoid;
+    gap: 10px;
+    margin: 10px;
     width: 300px;
     /* min-height: 200px; */
 }
@@ -39,11 +41,14 @@
     /* display: none; */
 }
 
-.actions-icon-container:hover {
-    display: block;
+/* .actions-icon-container img:hover {
+    display: flex;
+} */
+
+/* note-img */
+.note-img {
+    cursor: pointer;
 }
-
-
 
 /* add note */
 .new-note-container {
@@ -64,4 +69,30 @@
 
 .new-note-nav-container img:hover {
     cursor: pointer;
+}
+
+.todo-header {
+    margin-bottom: 15px;
+}
+
+/* todos */
+.note-todos-container {
+    /* column-count: 4; */
+    /* display: grid;
+    columns: 4; */
+    justify-content: space-around;
+}
+
+.croessedOut {
+    text-decoration: line-through;
+}
+
+.todo {
+    text-decoration: unset;
+}
+
+.todo-input, input {
+    background-color: #f4f0ec;
+    ;
+    ;
 }

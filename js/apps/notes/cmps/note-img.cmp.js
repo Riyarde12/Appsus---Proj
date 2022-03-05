@@ -1,11 +1,12 @@
 export default {
-    props: ["info"],
+    props: ["info", "noteId"],
     template: `
           <section class="todos-container">  
               <div>  
-              <h3 contenteditable="true">{{info.title}}</h3>
+              <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
                   <div class="img-container">    
-                     <img :src="info.url" alt="Pictur"> 
+                     <img @click="toggleEdit" :src="info.url" class="note-img" title="Edit Image" alt="Pictur"> 
+                     <input v-show="isImgClicked" @keyup="updateNote" v-model="newNote.newUrl" type="text" placeholder="Enter img Url..">
                   </div>
               </div>
             
@@ -14,11 +15,30 @@ export default {
   
     data() {
       return {
+        isImgClicked: false,
+        newNote: {
+          newTitle: this.info.title,
+          newTxt:'',
+          id: this.noteId,
+          newUrl: '',
+        }
+        // newImgUrl: this.info.url,
         // val: "",
         // selectedTasks: [],
       };
     },
     methods: {
+      updateNote(ev) {
+        // console.log('ev', ev);
+        if (ev.target.nodeName === 'H3') this.newNote.newTitle = ev.currentTarget.textContent;
+        // this.newUrl = this.info.url;
+        console.log('img new url', this.info.url);
+        this.$emit('updateNoteUrl', {...this.newNote});
+        // console.log('after emit', ev.target.nodeName);
+      },
+      toggleEdit(){
+        this.isImgClicked = !this.isImgClicked;
+      }
       // handleTasks(task) {
       //   console.log(this.selectedTasks);
       // },
@@ -36,6 +56,7 @@ export default {
       // },
     },
     created() {
+      this.newNote.newUrl = this.info.url
     //   console.log(this.info);
     //   console.log(this.info.label);
     },

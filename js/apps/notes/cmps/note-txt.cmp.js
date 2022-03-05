@@ -1,4 +1,5 @@
 export default {
+  name:"text-note",
   props: ["info", "noteId"],
   template: `
           <section class="note-text-container">    
@@ -15,6 +16,7 @@ export default {
                 <label for="">{{info.title}}</label>
                 <textarea v-model="val" @change="reportVal" rows="5" cols="33">Enter Text...</textarea>
                 </div> -->
+                <!-- <pre>{{info}}</pre> -->
 
           </section>
           `,
@@ -24,9 +26,10 @@ export default {
       // val: "",
       // note: null,
       newNote: {
-      newTitle:'',
-      newTxt:'',
-      id: this.noteId
+      newTitle: this.info.title,
+      newTxt: this.info.txt,
+      id: this.noteId,
+      url: ''
       }
 
     };
@@ -37,10 +40,11 @@ export default {
       // console.log("setVal", this.val);
     // },
     updateNote(ev) {
-      if (ev.path[0].localName === 'h3') this.newNote.newTitle = ev.currentTarget.textContent;
-      if (ev.path[0].localName === 'p') this.newNote.newTxt = ev.currentTarget.textContent;
+      // console.log('ev', ev);
+      if (ev.target.nodeName === 'H3') this.newNote.newTitle = ev.currentTarget.textContent;
+      if (ev.target.nodeName === 'P') this.newNote.newTxt = ev.currentTarget.textContent;
       this.$emit('updateNote', {...this.newNote});
-      console.log('after emit', this.newNote);
+      // console.log('after emit', ev.target.nodeName);
     },
     // updateTitle(ev){
     //   this.newTitle = ev.currentTarget.textContent
