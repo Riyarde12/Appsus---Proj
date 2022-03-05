@@ -9,7 +9,7 @@ export default {
         <div class="compose-container flex">
             <div class="tools-container">
                 <label>New message</label>
-                <button>X</button>
+                <button @click="closeModal">X</button>
             </div>
             <div class="content-container flex">
               <div>
@@ -37,7 +37,7 @@ export default {
     data() {
         return {
             newMail: mailService.setNewMailtoSent(),
-            // logInUser: mailService.getUserLogIn()
+            logInUser: mailService.getUserLogIn()
         };
     },
     components: {},
@@ -48,9 +48,11 @@ export default {
             mailService.save(this.newMail)
                 .then(() => {
                     this.newMail = mailService.setNewMailtoSent();
-                    console.log('this.newMail', this.newMail);
-                    this.$router.push('/mail');
+                    this.$router.push('/mail/inbox');
                 });
+        },
+        closeModal() {
+            this.$emit('closeModal');
         }
     },
     computed: {},

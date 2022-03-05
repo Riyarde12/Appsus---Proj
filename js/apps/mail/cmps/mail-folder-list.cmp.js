@@ -30,7 +30,8 @@ export default {
                 <router-link to="/mail/draft">
                   <img src="../../icons/draft.png" alt="">
                 </router-link>
-              </button></li>
+              </button>
+            </li>
             <li>
               <button @click="onSelectBox('isStared')">
                <router-link to="/mail/stared">

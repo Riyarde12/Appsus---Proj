@@ -32,6 +32,7 @@
 /* BASE */
 
 @import './apps/mail/mail-basic/base.css';
+@import './apps/mail/mail-basic/mail-mq.css';
 
 /* MAIN */
 @import './apps/mail/mail-style.css';

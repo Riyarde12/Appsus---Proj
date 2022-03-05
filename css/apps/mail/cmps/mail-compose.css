@@ -3,7 +3,6 @@
     left: 765px;
     top: 140px;
     z-index: 1;
-    /* display: none; */
 }
 
 .compose-container {
@@ -12,8 +11,9 @@
     flex-direction: column;
     background-color: #fff;
     height: 454px;
-    width: 327px;
+    width: 543px;
 }
+
 
 .tools-container {
     display: flex;

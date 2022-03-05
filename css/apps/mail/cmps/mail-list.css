@@ -1,13 +1,14 @@
 .mail-list {
     margin-left: 1.25em;
     /* width: 100%; */
-    width: 1113px;
+    /* width: 1113px; */
 }
 
 .list-container {
     /* max-width: 1000px; */
-    height: 485px;
+    height: 338px;
     overflow: scroll;
+
     /* scroll-behavior: auto; */
 }
 
@@ -41,4 +42,11 @@
     border-bottom: 1px solid lightgray;
     padding: 5px;
     width: 100%;
+}
+
+.prev-next-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
 }

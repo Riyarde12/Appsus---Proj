@@ -12,9 +12,18 @@ export default {
                         <h2>{{mail.subject}}</h2>
                         <h3>{{mail.name}}</h3>
                         <p>{{mail.body}}</p>
-                        <button @click="onDelete(mail.id)">Delete</button>
-                        <!-- <button @click="goBack"></button> -->
-                        <router-link to="/mail/inbox/">Back to Mails</router-link>
+                        <div>
+                            <div class="btn-container">
+                                <button @click="onDelete(mail.id)">Delete</button>
+                            </div>
+                            <div >
+                                <div class="prev-next-btn flex"> 
+                                    <router-link :to="/mail/+mail.prevMailId"><button>Previous Mail</button></router-link>
+                                    <router-link :to="/mail/+mail.nextMailId"><button>Next Mail</button></router-link>
+                                </div>
+                                    <router-link to="/mail/inbox/"><button>Back to Mails</button></router-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </section>
@@ -44,7 +53,8 @@ export default {
         onDelete(mailId) {
             mailService.remove(mailId)
                 .then(() => {
-                    this.$router.push('/mail');
+
+                    this.$router.push('/mail/inbox');
                 });
         },
         goBack() {
@@ -52,8 +62,8 @@ export default {
         },
         onSelectBox(value) {
             console.log('value', value);
-            this.$router.push({ name: 'mailApp', params: { value: value } });
-        }
+            this.$router.push('/mail/inbox');
+        },
     },
     computed: {},
     unmounted() { },

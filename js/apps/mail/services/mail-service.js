@@ -217,7 +217,10 @@ function save(mail) {
 
 function get(mailId) {
     // console.log('mailId', mailId);
-    return storageService.get(MAIL_KEY, mailId);
+    return storageService.get(MAIL_KEY, mailId)
+        .then(mail => {
+            return _setNextPrevMailId(mail);
+        });
 }
 
 function remove(mailId) {

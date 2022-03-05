@@ -7,15 +7,13 @@ import mailCompose from '../cmps/mail-compose.cmp.js';
 
 
 export default {
-    // name: 'mailApp',
     template: `
         <section class="mail-index main-container">
             <nav>
-                   <button v-on:click="isShown = !isShown">Compose
-                       <mail-compose  v-if="isShown" @closeModal="toggleModal"/>
-                    </button>
+                   <button v-on:click="isShown = !isShown">Compose</button>
+                   <mail-compose v-if="isShown" @closeModal="onToggleModal"/>
             </nav>
-            <div class="main-content flex">
+            <div  class="main-content flex">
                 <mail-folder-list @onSelectedBox="settingCurrentBox"/>
                 <router-view></router-view>
             </div>
@@ -32,14 +30,16 @@ export default {
                 this.mails = mails;
 
             });
-
+        this.unsubscribe = eventBus.on('onDelete', (mailId) => {
+            this.onDelete(mailId);
+        });
     },
     data() {
         return {
             mails: null,
             filterBy: null,
-            isShown: false,
             mailsForDisplay: [],
+            isShown: false,
         };
     },
     methods: {
@@ -50,16 +50,14 @@ export default {
             });
             eventBus.emit('selectedBox', this.mailsForDisplay);
         },
-        toggleModal() {
+        onToggleModal() {
             this.isShown = false;
-        }
+        },
     },
     computed: {
-        // openCompose() {
-        //     return { display: block };
-        // }
     },
     unmounted() {
+        this.unsubscribe();
         console.log('bye bye');
     },
 };
