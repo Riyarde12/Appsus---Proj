@@ -14,8 +14,8 @@ export default {
         <section class="notes-index main-container flex flex-column">
               <add-note @newNote="saveNote" />
               <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
-                    <div class="note-box">    
-                        <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote"></component>
+                    <div class="note-box" title="Click to Edit">    
+                        <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote" @updateNote="editNote" @updateNoteUrl="editNote"></component>
                     </div>
                     <action-nav v-if="note" :note="note" @remove="removeNote"/>
               </div>
@@ -41,6 +41,7 @@ export default {
   data() {
     return {
       notes: null,
+      
       // answers: []
       // notes: null,
       //   filterBy: null,
@@ -61,32 +62,42 @@ export default {
   methods: {
     removeNote(id) {
       notesService
-        .remove(id)
-        .then(() => {
-          const idx = this.notes.findIndex((note) => note.id === id);
-          this.notes.splice(idx, 1);
-          showSuccessMsg("Deleted succesfully");
-        })
-        .catch((err) => {
-          console.error(err);
-          showErrorMsg("Error - please try again later");
-        });
+      .remove(id)
+      .then(() => {
+        const idx = this.notes.findIndex((note) => note.id === id);
+        this.notes.splice(idx, 1);
+        showSuccessMsg("Deleted succesfully");
+      })
+      .catch((err) => {
+        console.error(err);
+        showErrorMsg("Error - please try again later");
+      });
     },
     saveNote(noteToAdd){
       notesService.save(noteToAdd)
       .then((note) => {
         this.notes.push(note);
-      
+        
+      })
+    },
+    editNote({newTitle, newTxt, id, newUrl}){
+      // console.log('edit title', newTitle);
+      // console.log('edit text', newTxt);
+      console.log('edit url', newUrl);
+      notesService.get(id).then(note => {
+        note.info.title = newTitle;
+        note.info.txt = newTxt
+        note.info.url = newUrl
+       notesService.save(note)
+      //  console.log(this.);
+      //  .then(note => {
+      //    this.notes.find(note => {
+      //      if (note.id === 
+      //    })
+      //  })
       })
     },
 
-    editNote(id, editedTxt){
-      notesService.save(id, editedTxt)
-      .then((note) => {
-        this.notes.push(note);
-      
-      })
-    },
     // addNote() {
     //   const newNote = notesService.getEmptyTxtNote();
     // },

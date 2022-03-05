@@ -12,8 +12,10 @@ export default {
             <i @click="addNewNote" class="fa-regular fa-comment-lines"></i>
             <i @click="addNewNote" class="fa-solid fa-image"></i>
             <i @click="addNewNote" class="fa-solid fa-list-ul"></i>
-            <i @click="addNewNote" class="fa-solid fa-play"></i> 
-            <img @click="addNewNote" src="../../../../img/text.png" alt="">
+            <img @click="addNewNote" src="../../../../icons/play-button.png" alt="">
+            <img @click="addNewNote" src="../../../../icons/comment.png" alt="">
+            <!-- <i @click="addNewNote" class="fa-solid fa-play"></i>  -->
+            <!-- <img @click="addNewNote" src="../../../../img/text.png" alt=""> -->
             <!-- <img src="../../../../img/img.png" alt="">
             <img src="../../../../img/video.png" alt="">
             <img src="../../../../img/list.png" alt=""> -->
@@ -29,7 +31,7 @@ export default {
   },
   components: {},
   created() {
-    console.log('this.noteToAdd.type', this.noteToAdd.type);
+    // console.log('this.noteToAdd.type', this.noteToAdd.type);
   },
   
   methods: {

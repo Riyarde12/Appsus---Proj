@@ -26,7 +26,7 @@ const gNotes = [
     },
   },
   {
-    id: "n106",
+    id: "n102",
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
@@ -35,11 +35,11 @@ const gNotes = [
       txt: "Ask Yaron || Google it",
       style: {
         backgroundColor: "#EDF6E5",
-      },
+    },
     },
   },
   {
-    id: "n105",
+    id: "n103",
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
@@ -48,11 +48,11 @@ const gNotes = [
       txt: "Ask Yaron || Google it",
       style: {
         backgroundColor: "#FFBCBC",
-      },
+    },
     },
   },
   {
-    id: "n108",
+    id: "n104",
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
@@ -61,11 +61,24 @@ const gNotes = [
       txt: "Ask Yaron || Google it, dsfnldknf, jfh jsndgd lskngf ldg gn lejngleg ngelng erg.",
       style: {
         backgroundColor: "#F38BA0",
-      },
+    },
     },
   },
   {
-    id: "n109",
+    id: "n105",
+    type:  NOTE_TYPE.VIDEO,
+    isPinned: false,
+    info: {
+    title: "Otis Redding - Sitting on the dock of the bay",
+      label: "Friends",
+      url: "https://www.youtube.com/embed/UCmUhYSr-e4?start=7",
+      style: {
+        backgroundColor: "#00d",
+    },
+      },
+    },
+  {
+    id: "n106",
     type: NOTE_TYPE.TEXT,
     isPinned: true,
     info: {
@@ -74,28 +87,28 @@ const gNotes = [
       txt: "Ask Yaron || Google it",
       style: {
         backgroundColor: "#E6DDC6",
-      },
+    },
     },
   },
   {
-    id: "n102",
+    id: "n107",
     type: NOTE_TYPE.IMG,
     isPinned: false,
     info: {
       title: "Kermit and Me",
       label: "Family",
       url: "../../../../img/kermit.jpeg",
+      style: {
+        backgroundColor: "#00d",
     },
-    style: {
-      backgroundColor: "#00d",
     },
   },
   {
-    id: "n103",
+    id: "n108",
     type: NOTE_TYPE.TODO,
     isPinned: true,
     info: {
-      title: "Get my stuff together",
+      title: "Get my shit together",
       label: "Work",
       todos: [
         { txt: "Sprint 3", doneAt: null },
@@ -104,35 +117,33 @@ const gNotes = [
       ],
       style: {
         backgroundColor: "#00d",
-      },
+    },
     },
   },
   {
-    id: "n104",
+    id: "n109",
     type:  NOTE_TYPE.VIDEO,
     isPinned: false,
     info: {
     title: "Guilty Dogs",
       label: "Friends",
-      url: "https://www.videvo.net/video/tropical-fish-banner-fish-on-coral-reef/452225/",
-      // url: "https://rr3---sn-4g5e6nsr.googlevideo.com/videoplayback?expire=1646431125&ei=NTciYv-mOoH6kgaK26PACg&ip=192.186.185.1&id=o-AM35AaX3KuskrVe4FGTBGsbBr549tN-8GErLSNqYO7kq&itag=17&source=youtube&requiressl=yes&vprv=1&mime=video%2F3gpp&gir=yes&clen=1616812&dur=166.765&lmt=1575002951007538&fexp=24001373,24007246&c=ANDROID&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRgIhANOurFODnoRELHl6nuMmez8Ah9SclQQQVWQOM3_cw1m2AiEA7TeHqlEaKwvMpyUgrP7320PnOzcOYVKg9WCqpb1xS9s%3D&title=Otis%20Redding%20-%20(Sittin%27%20On)%20The%20Dock%20Of%20The%20Bay%20(Official%20Music%20Video)&rm=sn-a5me7k7s&req_id=21d166245d71a3ee&redirect_counter=2&cm2rm=sn-oxu8pnpvo-nq8e7s&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=sA&mip=2a02:14c:631e:ec00:d9da:1bd9:3a2d:fd7b&mm=29&mn=sn-4g5e6nsr&ms=rdu&mt=1646409417&mv=m&mvi=3&pl=46&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAM-bYIu_yF3qT81bDOaKq6mGiGBt8g11L6K-fHseeweJAiEA7XYGGhr_AcGlJrM2ESY8k5pWWV3sl_ocN7nppWLc1I4%3D",
-      // url: "https://www.youtube.com/watch?v=_kLdO3EsECs",
+      url: "https://www.youtube.com/embed/_kLdO3EsECs",
+      style: {
+        backgroundColor: "#00d",
     },
-    style: {
-      backgroundColor: "#00d",
-    },
+      },
     },
     {
-      id: "n102",
+      id: "n110",
       type: NOTE_TYPE.IMG,
       isPinned: false,
       info: {
-        title: "Bobi and Me",
+        title: "Elmodal!",
         label: "Family",
         url: "../../../../img/Elmodal.jpg",
+        style: {
+          backgroundColor: "#00d",
       },
-      style: {
-        backgroundColor: "#00d",
       },
     },
 ];
