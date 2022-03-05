@@ -14,7 +14,7 @@ export default {
         <section class="notes-index main-container flex flex-column">
               <add-note @newNote="saveNote" />
               <div v-for="(note, idx) in notes" :key="note.id" class="note-container">
-                    <div class="note-box">    
+                    <div class="note-box" title="Click to Edit">    
                         <component :is="note.type" :info="note.info" :noteId="note.id" @noteTitleEdited="saveNote" @updateNote="editNote" @updateNoteUrl="editNote"></component>
                     </div>
                     <action-nav v-if="note" :note="note" @remove="removeNote"/>

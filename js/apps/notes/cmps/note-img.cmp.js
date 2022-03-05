@@ -6,7 +6,7 @@ export default {
               <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
                   <div class="img-container">    
                      <img @click="toggleEdit" :src="info.url" class="note-img" title="Edit Image" alt="Pictur"> 
-                     <input v-show="isImgClicked" @keyup="updateNote" v-model="newNote.newUrl" type="text" placeholder="Enter img Url..">
+                     <input v-show="isImgClicked" @keyup="updateNote" v-model="newNote.newUrl" type="text" placeholder="Enter img URL..">
                   </div>
               </div>
             
