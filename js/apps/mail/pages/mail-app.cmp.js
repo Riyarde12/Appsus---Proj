@@ -11,7 +11,9 @@ export default {
     template: `
         <section class="mail-index main-container">
             <nav>
-                <router-link  to="/mail/compose">Compose</router-link>
+                <button>
+                    <router-link  to="/mail/compose">Compose</router-link>
+                </button>
             </nav>
             <div  class="main-content flex">
                 <mail-folder-list @onSelectedBox="settingCurrentBox"/>
