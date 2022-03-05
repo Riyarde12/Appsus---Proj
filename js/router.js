@@ -9,6 +9,7 @@ import mailTrash from './apps/mail/cmps/mail-trash.cmp.js';
 import mailSent from './apps/mail/cmps/mail-sent.cmp.js';
 import mailDraft from './apps/mail/cmps/mail-draft.cmp.js';
 import mailInbox from './apps/mail/cmps/mail-inbox.cmp.js';
+import mailStared from './apps/mail/cmps/mail-stared.cmp.js';
 
 const routes = [
     {
@@ -30,6 +31,7 @@ const routes = [
     {
         path: '/mail',
         component: mailApp,
+        name: mailApp,
         children: [
             {
                 path: 'compose',
@@ -50,6 +52,10 @@ const routes = [
             {
                 path: 'inbox',
                 component: mailInbox,
+            },
+            {
+                path: 'stared',
+                component: mailStared,
             },
 
         ]

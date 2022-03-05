@@ -33,11 +33,13 @@ export default {
               </button></li>
             <li>
               <button @click="onSelectBox('isStared')">
-                <img src="../../icons/favourite.png" alt="">
+               <router-link to="/mail/stared">
+                  <img src="../../icons/favourite.png" alt="">
+                </router-link>
               </button>
             </li>
           </ul>
-            
+             
 
         </section>
     `,
@@ -50,7 +52,6 @@ export default {
   },
   methods: {
     onSelectBox(val) {
-      console.log('val', val);
       this.$emit('onSelectedBox', val);
     },
 

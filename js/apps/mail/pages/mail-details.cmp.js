@@ -7,12 +7,14 @@ export default {
     template: `
         <section class="mail-details main-container">
                 <div class="details-container">
+                    <mail-folder-list @onSelectedBox="onSelectBox"/>
                     <div class="content-container" v-if="mail">
                         <h2>{{mail.subject}}</h2>
                         <h3>{{mail.name}}</h3>
                         <p>{{mail.body}}</p>
                         <button @click="onDelete(mail.id)">Delete</button>
-                        <router-link to="/mail">Back to Mails</router-link>
+                        <!-- <button @click="goBack"></button> -->
+                        <router-link to="/mail/inbox/">Back to Mails</router-link>
                     </div>
                 </div>
         </section>
@@ -45,7 +47,12 @@ export default {
                     this.$router.push('/mail');
                 });
         },
+        goBack() {
+            this.$router.go(-1);
+        },
         onSelectBox(value) {
+            console.log('value', value);
+            this.$router.push({ name: 'mailApp', params: { value: value } });
         }
     },
     computed: {},
