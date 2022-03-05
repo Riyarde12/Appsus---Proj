@@ -8,3 +8,11 @@
 .mail-index .main-content {
     margin-top: 1.25em;
 }
+
+.mail-index nav {
+    margin: 0.625em;
+}
+
+.app-header h1 {
+    font-family: conthrax;
+}

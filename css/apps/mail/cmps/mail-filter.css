@@ -2,3 +2,7 @@
     margin-left: 4.75em;
     margin-top: 1.25em;
 }
+
+.mail-filter input {
+    border-radius: 15px;
+}

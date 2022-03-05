@@ -26,6 +26,7 @@ export default {
     return {
       mails: null,
       filterBy: null,
+
     };
   },
   methods: {
@@ -36,6 +37,7 @@ export default {
     setFilterBy(filterBy) {
       this.filterBy = filterBy;
     },
+
   },
   computed: {
     mailsToShow() {

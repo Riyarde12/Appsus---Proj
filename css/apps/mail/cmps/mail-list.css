@@ -9,13 +9,23 @@
     align-items: flex-start;
     margin: 0;
     padding: 0;
+    width: 75em;
 }
 
 .mail-list .list-container li {
     border-top: 1px solid lightgray;
-
     padding: 5px;
     width: 100%;
+    border: 1px px #d3d3d34f solid;
+    padding: 10px;
+
+
+}
+
+.mail-list .list-container li:hover {
+    background-color: rgba(211, 211, 211, 0.568);
+    box-shadow: 10px 5px 10px #888888;
+    transition: 0.4s;
 }
 
 .mail-list .list-container li:last-child {

@@ -6,8 +6,15 @@ export default {
     template: `
         <section class="mail-preview">
             <div :style="isRead">
-                <h3>{{mail.name}}</h3>
-                <h4>{{mail.subject}}</h4>
+                <!-- <div> -->
+                    <button @click.stop.prevent="onStared"><img src="../../icons/favourite.png" alt=""></button>
+                <!-- </div> -->
+                <!-- <div> -->
+                    <h3>{{mail.name}}</h3>
+                <!-- </div> -->
+                <!-- <div> -->
+                    <h4>{{mail.subject}}</h4>
+                <!-- </div> -->
             </div>
         </section>
     `,
@@ -20,6 +27,10 @@ export default {
         };
     },
     methods: {
+        onStared() {
+            this.mail.isStared = true;
+            console.log('this.mail', this.mail);
+        }
     },
     computed: {
         isRead() {

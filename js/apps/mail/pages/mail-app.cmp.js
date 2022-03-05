@@ -7,10 +7,13 @@ import { eventBus } from '../../../services/eventBus-service.js';
 
 
 export default {
+    name: 'mailApp',
     template: `
         <section class="mail-index main-container">
             <nav>
-                <router-link  to="/mail/compose">Compose</router-link>
+                <button>
+                    <router-link  to="/mail/compose">Compose</router-link>
+                </button>
             </nav>
             <div  class="main-content flex">
                 <mail-folder-list @onSelectedBox="settingCurrentBox"/>
@@ -34,17 +37,16 @@ export default {
         return {
             mails: null,
             filterBy: null,
-            mailsForDisplay: [],
+            // mailsForDisplay: [],
+
         };
     },
     methods: {
         settingCurrentBox(settingMailsBy) {
-            console.log('settingMailsBy', settingMailsBy);
             this.mailsForDisplay = [];
             this.mailsForDisplay = this.mails.filter(mail => {
                 if (mail[settingMailsBy]) return mail[settingMailsBy];
             });
-            console.log('this.mailsForDisplay', this.mailsForDisplay);
             eventBus.emit('selectedBox', this.mailsForDisplay);
         }
     },
