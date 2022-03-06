@@ -25,7 +25,5 @@ export default {
     },
   },
   computed: {},
-  mounted() {
-    // console.log("note id", this.note.id);
-  },
+
 };

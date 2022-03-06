@@ -15,11 +15,6 @@ export default {
             <i @click="addNewNote" class="fa-solid fa-list-ul"></i>
             <img @click="addNewNote" src="../../../../icons/play-button.png" alt="">
             <img @click="addNewNote" src="../../../../icons/comment.png" alt="">
-            <!-- <i @click="addNewNote" class="fa-solid fa-play"></i>  -->
-            <!-- <img @click="addNewNote" src="../../../../img/text.png" alt=""> -->
-            <!-- <img src="../../../../img/img.png" alt="">
-            <img src="../../../../img/video.png" alt="">
-            <img src="../../../../img/list.png" alt=""> -->
           </div>
   </section>
   `,
@@ -60,27 +55,3 @@ export default {
     computed: {},
     unmounted() {},
 };
-
-// <!-- <i class="fa-regular fa-comment-lines"></i> -->
-// <!-- <i class="fa-solid fa-comment-lines"></i> -->
-// <!-- <i class="fa-light fa-comment-lines"></i> -->
-//   <!-- <i class="fa-solid fa-message-lines"></i> -->
-//   <!-- <i class="fa-regular fa-message-lines"></i> -->
-//   <!-- <i class="fa-solid fa-text"></i> -->
-//   <!-- <i class="fa-regular fa-camera-movie"></i> -->
-//   <!-- <i class="fa-brands fa-youtube"></i>  -->
-//   <!-- <i class="fa-light fa-video"></i> -->
-//   <!-- <i class="fa-light fa-video-arrow-up-right"></i> -->
-//   <!-- <i class="fa-regular fa-video-arrow-up-right"></i> -->
-//   <!-- <i class="fa-regular fa-play"></i> -->
-//   <!-- <img src="../../../../img/text.png" alt=""> -->
-//   <!-- <img src="../../../../img/video.png" alt=""> -->
-/* <i class="fa-regular fa-message-plus"></i>
-<font-awesome-icon icon="fa-regular fa-message-text" />
-<font-awesome-icon icon="fa-regular fa-comment-pen" />
-<font-awesome-icon icon="fa-solid fa-comment-dots" />
-<font-awesome-icon icon="fa-regular fa-message-plus" />
-<font-awesome-icon icon="fa-regular fa-message-dots" />
-<font-awesome-icon icon="fa-regular fa-message-lines" />
-<font-awesome-icon icon="fa-solid fa-message-lines" />
-<font-awesome-icon icon="fa-solid fa-comment-pen" /> */

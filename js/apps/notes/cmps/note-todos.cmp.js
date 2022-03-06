@@ -12,17 +12,7 @@ export default {
                     <input v-show="isLineClicked" type="text" v-model="task.txt" class="todo-input">
                     <i class="fa-solid fa-pen-to-square" @click="toggleEdit"></i>
                     <i class="fa-solid fa-trash-can" @click="removeTask"></i> 
-                  
-
-
-            <!-- <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
-                <div v-for="task in info.todos" class="note-text-container">    
-                  <p> <span @keyup="updateNote" contenteditable="true">{{task.txt}}</span><span @click="removeTask">   ☓</span></p> -->
-
-                  <!-- <input type="text" v-model="info.txt" placeholder={{info.txt}}> -->            
-                <!-- </div> -->
             </div>
-          
         </section>
           `,
 
@@ -61,12 +51,7 @@ export default {
     //   return this.isCrossedOut ? "crossed" : "todo";
     // },
 
-    removeTask(){
-
-    }
-    // listId() {
-    //   return "list" + this._uid;
-    // },
+    // removeTask(){}
   },
   created() {
     // console.log(this.info);

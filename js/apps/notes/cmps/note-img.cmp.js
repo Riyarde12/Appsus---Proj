@@ -23,16 +23,12 @@ export default {
           id: this.noteId,
           newUrl: '',
         }
-        // newImgUrl: this.info.url,
-        // val: "",
-        // selectedTasks: [],
       };
     },
     methods: {
       updateNote(ev) {
         // console.log('ev', ev);
         if (ev.target.nodeName === 'H3') this.newNote.newTitle = ev.currentTarget.textContent;
-        // this.newUrl = this.info.url;
         console.log('img new url', this.info.url);
         this.$emit('updateNoteUrl', {...this.newNote});
         // console.log('after emit', ev.target.nodeName);
@@ -40,16 +36,7 @@ export default {
       toggleEdit(){
         this.isImgClicked = !this.isImgClicked;
       }
-      // handleTasks(task) {
-      //   console.log(this.selectedTasks);
-      // },
-      // simulateAjax() {
-      //   this.selectedTasks = [{ txt: "Clean the house" }, { txt: "Learn Vue.js" }];
-      // },
-      // reportVal() {
-      //   this.$emit("setVal", this.val);
-      //   console.log("setVal", this.val);
-      // },
+
     },
     computed: {
       backgroundColor() {

@@ -1,21 +1,16 @@
 /* notes */
 .notes-index {
     background-color: #f4f0ec;
-    /* font-family: bray; */
-
-}
-
-.notes-index h3 {
-    /* font-family: bray; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 1em;
 
 }
 
 .notes-container {
     /* display: flex; */
     /* flex-wrap: wrap; */
-    column-count: 4;
+    column-count: 3;
     display: inline-block;
-    /* gap: 10px; */
     margin: 0 auto
 }
 
@@ -26,27 +21,17 @@
     padding: 0.5em;
     text-align: center;
     justify-content: center;
-    /* gap: 10px; */
-    /* margin: 10px; */
     width: 300px;
     border-radius: 15px;
     box-shadow: black 1px 5px 5px;
     margin-bottom: 20px;
-
-
-    /* min-height: 200px;
-    min-width: 250px;
-    max-width: 300px; */
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    /* color: #292927; */
-    /* margin-left: 10px; */
-    /* -webkit-box-shadow: 2px 2px 2px 0px rgba(212, 214, 200, 1); */
-    /* -moz-box-shadow: 2px 2px 2px 0px rgba(212, 214, 200, 1); */
-    /* box-shadow: 2px 2px 2px 0px rgba(212, 214, 200, 1); */
-
+    /* min-height: 200px;
+    min-width: 250px;
+    max-width: 300px; */
 }
 
 .note-nav-container:hover {
@@ -63,7 +48,7 @@
 /* note */
 
 .note-box {
-    /* min-width: 6.25em; */
+    /* min-width: 4em; */
     gap: 10px;
     margin: 5px;
     width: 80%;
@@ -72,33 +57,33 @@
 
 .actions-icon-container {
     visibility: hidden;
-    /* width: fit-content; */
-    /* align-ite ms: flex-start; */
-    /* align-self: flex-end; */
     gap: 5px;
     margin-top: 10px;
     justify-content: end;
-    /* display: none; */
 }
 
 
 
 /* text note */
+
 .note-text-container {
     background-color: var(--clr2);
 }
 
+
 /* note-img */
+
 .note-img {
     cursor: pointer;
 }
 
 
+/* todos */
+
 .todo-header {
     margin-bottom: 15px;
 }
 
-/* todos */
 .note-todos-container {
     /* column-count: 4; */
     /* display: grid; */
@@ -120,7 +105,5 @@
 }
 
 .todo-input input {
-    background-color: #f4f0ec;
-    ;
-    ;
+    background-color: var(--clr1);
 }

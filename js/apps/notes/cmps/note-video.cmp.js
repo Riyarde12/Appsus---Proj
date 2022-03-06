@@ -38,13 +38,6 @@ export default {
     toggleEdit(){
       this.isVideoClicked = !this.isVideoClicked;
     }
-    // handleTasks(task) {
-    //   console.log(this.selectedTasks);
-    // },
-    // reportVal() {
-    //   this.$emit("setVal", this.val);
-    //   console.log("setVal", this.val);
-    // },
   },
   computed: {
     backgroundColor() {
@@ -53,7 +46,5 @@ export default {
   },
   created() {
     this.newNote.newUrl = this.info.url
-  //   console.log(this.info);
-  //   console.log(this.info.label);
   },
 };
