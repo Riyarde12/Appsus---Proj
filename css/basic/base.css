@@ -57,3 +57,14 @@ i {
 textarea {
     resize: none;
 }
+
+.success {
+    /* background-color: rgb(160, 160, 160); */
+}
+
+.user-msg {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    padding: 10px;
+}

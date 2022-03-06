@@ -18,8 +18,8 @@ export default {
                             </div>
                             <div >
                                 <div class="prev-next-btn flex"> 
-                                    <router-link :to="/mail/+mail.prevMailId"><button>Previous Mail</button></router-link>
-                                    <router-link :to="/mail/+mail.nextMailId"><button>Next Mail</button></router-link>
+                                    <router-link :to="'/mail/'+mail.prevMailId"><button>Previous Mail</button></router-link>
+                                    <router-link :to="'/mail/'+mail.nextMailId"><button>Next Mail</button></router-link>
                                 </div>
                                     <router-link to="/mail/inbox/"><button>Back to Mails</button></router-link>
                             </div>
@@ -34,15 +34,15 @@ export default {
 
     },
     created() {
-        const id = this.$route.params.mailId;
-        console.log('id', id);
+        // const id = this.$route.params.mailId;
+        // console.log('id', id);
 
-        mailService.get(id)
-            .then(mail => {
-                this.mail = mail;
-                this.mail.isRead = true;
-                mailService.save(this.mail);
-            });
+        // mailService.get(id)
+        //     .then(mail => {
+        //         this.mail = mail;
+        //         this.mail.isRead = true;
+        //         mailService.save(this.mail);
+        //     });
     },
     data() {
         return {
@@ -53,18 +53,39 @@ export default {
         onDelete(mailId) {
             mailService.remove(mailId)
                 .then(() => {
-
                     this.$router.push('/mail/inbox');
                 });
         },
         goBack() {
             this.$router.go(-1);
         },
+
         onSelectBox(value) {
             console.log('value', value);
             this.$router.push('/mail/inbox');
         },
+        loadMail() {
+            mailService.get(this.mailId)
+                .then(mail => {
+                    console.log('mail', mail);
+                    this.mail = mail;
+                    this.mail.isRead = true;
+                    mailService.save(this.mail);
+                });
+        }
     },
-    computed: {},
+    watch: {
+        mailId: {
+            handler() {
+                this.loadMail();
+            },
+            immediate: true,
+        }
+    },
+    computed: {
+        mailId() {
+            return this.$route.params.mailId;
+        },
+    },
     unmounted() { },
 };

@@ -1,3 +1,5 @@
+import { eventBus } from "../../../services/eventBus-service.js";
+
 
 export default {
   props: [""],
@@ -6,8 +8,9 @@ export default {
           <ul>
             <li>
               <button @click="onSelectBox('from')">
-                 <router-link to="/mail/inbox">
+                 <router-link to="/mail/inbox"> 
                    <img src="../../icons/envelope.png" alt="">
+                   <!-- <div><p>{{setCounter}}</p></div> -->
                   </router-link>
                 </button>
             </li>
@@ -40,23 +43,37 @@ export default {
               </button>
             </li>
           </ul>
-             
-
+    
         </section>
     `,
   components: {},
-  created() { },
+  created() {
+    // this.unsubscribe = eventBus.on('setCounterUnread', (counterUnRead) => {
+    //   console.log('counterUnread', counterUnRead);
+
+    //   this.setCounter(counterUnRead);
+    // });
+  },
   data() {
     return {
-
+      unReadMails: null,
     };
   },
   methods: {
     onSelectBox(val) {
       this.$emit('onSelectedBox', val);
     },
+  },
+  computed: {
+    // setCounter(counterUnRead) {
+    //   console.log('counter', counterUnRead);
+    //   return counterUnRead;
+    // }
+  },
+  mounted() {
 
   },
-  computed: {},
-  unmounted() { },
+  unmounted() {
+    // this.unsubscribe();
+  },
 };

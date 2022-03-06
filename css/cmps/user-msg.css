@@ -1,18 +1,24 @@
 /* user-msg */
 
-.user-msg{
+.user-msg {
     position: absolute;
-    top: 50px;
+    top: 530px;
     right: 30px;
     font-size: 1rem;
     padding: 15px;
+    border-radius: 15px;
 }
 
 .success {
-    background-color: lightgreen;
+    background-color: rgb(189, 189, 189);
 }
 
 .error {
     background-color: red;
     color: white;
+}
+
+.user-msg-btn-modal {
+    width: 50px;
+    height: 50px;
 }
