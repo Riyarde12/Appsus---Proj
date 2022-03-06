@@ -2,7 +2,7 @@ export default {
   name: "actions-nav",
   props: ["note"],
   template: `
-<section class="add-note-container">
+<section class="edit-note-container">
             <div class="actions-icon-container flex">                  
                 <i class="fa-solid fa-thumbtack" title="Pin note"></i>
                 <i class="fa-solid fa-palette" title="Edit color"></i>

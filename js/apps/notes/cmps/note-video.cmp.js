@@ -6,7 +6,7 @@ export default {
               <div contenteditable="true">  
               <h3 @keyup="updateNote" contenteditable="true">{{info.title}}</h3>
                   <div class="video-container">   
-                       <iframe width="270" height="150" :src="info.url" title="Edit note" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>
+                       <iframe width="225" height="150" :src="info.url" title="Edit note" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen controls></iframe>
                         <i @click="toggleEdit" class="fa-solid fa-pen-to-square"></i>
                         <input v-show="isVideoClicked" @keyup="updateNote" v-model="newNote.newUrl" type="text" placeholder="Enter video URL..">
                     </video>

@@ -11,7 +11,6 @@ export default {
                 <!-- </div> -->
                 <button>Save</button>
             </form>
-
             <!-- <ul>
                 <li v-for="note in notes" :key="note.id" class="note-list-container clean-list">
                 <note-preview :note="note"/>
@@ -32,18 +31,10 @@ export default {
   },
   data() {
     return {
-      cmp: {
-        info: {
-          label: "are you happy?",
-          option: ["great", "bad"],
-        },
-      },
-    };
+  }
   },
   methods: {
-    setAns(ans) {
-      console.log("setAns", ans);
-    },
+
   },
   computed: {},
   mounted() {

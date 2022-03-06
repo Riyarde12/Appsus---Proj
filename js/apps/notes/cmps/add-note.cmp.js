@@ -5,7 +5,7 @@ export default {
   template: `
   <section class="new-note-container flex" >
           <div class="new-note">
-                <label for="title"><input type="text" v-model="noteToAdd.info.title" placeholder="Add Title"></label>
+                <label for="title"><input type="text" v-model="noteToAdd.info.title" placeholder="Add Title.."></label>
                 <label for="note-text"><input type="text" v-model="noteToAdd.info.txt" required :placeholder="placholder"></label>
                 <button @click="saveNewNote" >Save</button>
           </div>
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       noteToAdd: notesService.getEmptyTxtNote(),
-      placholder: "Enter text"
+      placholder: "Enter text..."
     };
   },
   components: {},

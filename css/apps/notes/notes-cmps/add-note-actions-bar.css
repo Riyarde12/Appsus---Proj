@@ -4,3 +4,32 @@
     /* justify-content: center;
     align-items: center; */
 }
+
+.new-note-container {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.new-note-container input {
+    height: 40px;
+    border-radius: 6px;
+    background-color: var(--clr1);
+    border: 1px solid darkgray;
+
+}
+
+.new-note-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.new-note-nav-container img {
+    width: 18px;
+
+}
+
+.new-note-nav-container img:hover {
+    cursor: pointer;
+}
