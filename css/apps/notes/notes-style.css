@@ -4,4 +4,5 @@
 
 
 /* COMPONENTS */
-@import './notes-cmps/note.cmp.css'
+@import './notes-cmps/notes-main.css';
+@import './notes-cmps/add-note-actions-bar.css';

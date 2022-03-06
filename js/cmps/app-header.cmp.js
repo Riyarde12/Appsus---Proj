@@ -3,8 +3,8 @@ export default {
   template: `
         <section class="app-header">
             <div class="header-container flex space-between">  
-              <div>
-                  <h1>LOGO</h1>
+              <div class="logo">
+                  <h1>AppSuss</h1>
               </div>
               <nav class="nav-container">
                   <router-link to="/">Home</router-link> |
