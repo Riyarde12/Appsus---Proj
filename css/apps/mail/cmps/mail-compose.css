@@ -1,6 +1,6 @@
 .mail-compose {
     position: absolute;
-    left: 765px;
+    top: 223px;
     top: 140px;
     z-index: 1;
 }
@@ -10,10 +10,8 @@
     border-radius: 15px;
     flex-direction: column;
     background-color: #fff;
-    height: 454px;
-    width: 543px;
-}
 
+}
 
 .tools-container {
     display: flex;

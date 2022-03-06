@@ -48,6 +48,7 @@ export default {
             mailService.save(this.newMail)
                 .then(() => {
                     this.newMail = mailService.setNewMailtoSent();
+                    eventBus.emit('show-msg', { txt: 'Sent...', type: 'success' });
                     this.$router.push('/mail/inbox');
                 });
         },
