@@ -2,15 +2,17 @@ export default {
   // props: [""],
   template: `
         <section class="app-home main-container">
-            <h1>Hello!! app home</h1>
+          <div class="content-container"> 
+            <h1>AppSuss</h1>
+          </div>
         </section>
     `,
   components: {},
-  created() {},
+  created() { },
   data() {
     return {};
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 };
