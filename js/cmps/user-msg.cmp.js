@@ -1,15 +1,13 @@
 import { eventBus } from "../services/eventBus-service.js";
 
 export default {
-    // props: [""],
     template: `
         <section v-if="msg" class="user-msg" :class="msg.type">
-            <!-- <div> -->
-                <!-- <button @click="closeModal">X</button> -->
-            <!-- </div> -->
+            <div>
+                <button class="user-msg-btn-modal" @click="closeModal">X</button>
+            </div>
             <div>
                 <p>{{msg.txt}}</p>
-                <!-- <router-link to="/book">Check it Out</router-link> -->
             </div>
         </section>
     `,

@@ -2,6 +2,7 @@ import mailPreview from "../cmps/mail-preview.cmp.js";
 import mailDetails from "../pages/mail-details.cmp.js";
 import mailFilter from "./mail-filter.cmp.js";
 import { mailService } from "../services/mail-service.js";
+import { eventBus } from "../../../services/eventBus-service.js";
 
 export default {
   props: ["mails"],
@@ -35,7 +36,14 @@ export default {
       mailService.remove(mailId);
       const idx = this.mails.findIndex(mail => mail.id === mailId);
       this.mails.splice(idx, 1);
+      eventBus.emit('show-msg', { txt: 'Deleted', type: 'success' });
     },
+    // updateCounterForDisplay() {
+    //   // if (this.counterUnRead) {
+    //   //   // eventBus.emit('setCounterUnread', this.counterUnRead);
+    //   //   // console.log('this.counterUnread', this.counterUnread);
+    //   // }
+    // },
     countUnread() {
       let counter = 0;
       this.mails.forEach(mail => {
@@ -49,13 +57,14 @@ export default {
   computed: {
   },
   watch: {
-    counterUnRead: {
-      handler() {
-        this.countUnread();
-        console.log('hey');
-      },
-      immediate: true
-    }
+    // counterUnRead: {
+    //   handler() {
+    //     this.countUnread();
+    //     this.updateCounterForDisplay();
+    //     console.log('hey');
+    //   },
+    //   immediate: true
+    // }
   },
   unmounted() { },
 };

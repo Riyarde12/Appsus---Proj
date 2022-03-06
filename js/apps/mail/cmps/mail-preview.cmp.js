@@ -32,6 +32,7 @@ export default {
         onStared() {
             this.mail.isStared = true;
             console.log('this.mail', this.mail);
+            eventBus.emit('show-msg', { txt: 'Save to Stared', type: 'success' });
         },
         onDelete(mailId) {
             this.$emit('onDelete', mailId);

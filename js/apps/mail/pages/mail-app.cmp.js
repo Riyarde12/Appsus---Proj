@@ -1,5 +1,4 @@
 import { mailService } from '../services/mail-service.js';
-// import mailList from '../cmps/mail-list.cmp.js';
 import mailFilter from '../cmps/mail-filter.cmp.js';
 import mailFolderList from '../cmps/mail-folder-list.cmp.js';
 import { eventBus } from '../../../services/eventBus-service.js';
